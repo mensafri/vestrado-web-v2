@@ -1,30 +1,17 @@
 "use client";
-
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { cn, signUpSchema } from "@/lib/utils";
+import { signUpSchema } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { CheckIcon, ChevronDown, CircleCheckBig } from "lucide-react";
 import {
 	Form,
 	FormControl,
 	FormField,
 	FormMessage,
 } from "@/components/ui/form";
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import {
-	Command,
-	CommandGroup,
-	CommandItem,
-	CommandList,
-} from "@/components/ui/command";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
