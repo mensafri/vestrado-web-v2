@@ -1,0 +1,33 @@
+@keyframes moveImage {
+	from {
+		transform: translateX(0) translateY(-50%);
+		-webkit-transform: translateX(0) translateY(-50%);
+		-moz-transform: translateX(0) translateY(-50%);
+		-ms-transform: translateX(0) translateY(-50%);
+		-o-transform: translateX(0) translateY(-50%);
+	}
+	to {
+		transform: translateX(calc(100vw - 25vw)) translateY(-50%);
+		-webkit-transform: translateX(calc(100vw - 25vw)) translateY(-50%);
+		-moz-transform: translateX(calc(100vw - 25vw)) translateY(-50%);
+		-ms-transform: translateX(calc(100vw - 25vw)) translateY(-50%);
+		-o-transform: translateX(calc(100vw - 25vw)) translateY(-50%);
+	}
+}
+
+@keyframes progressBar {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+.progressLine {
+	animation: progressBar 3s ease-in-out forwards;
+}
+
+.movingImage {
+	animation: moveImage 3s ease-in-out forwards;
+}

@@ -42,6 +42,7 @@ const individuSchema = z
 const corporateSchema = z
 	.object({
 		companyName: z.string().min(1, "Company name is required"),
+		registrationNumber: z.string().min(1),
 		country: z.string().optional(),
 		address: z.string().optional(),
 		zipCode: z.string().optional(),

@@ -54,9 +54,14 @@ const config = {
 				},
 				sky: {
 					1: "#F3F9FF",
+					2: "#F5F5F5",
 				},
 				gray: {
 					1: "#888888",
+					2: "#6C6B6B",
+				},
+				green: {
+					1: "#07D447",
 				},
 			},
 			borderRadius: {
