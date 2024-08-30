@@ -113,7 +113,9 @@ const SignInForm = () => {
 						</div>
 					</div>
 					<div className="flex flex-col gap-3">
-						<Button className="w-full h-12 md:h-14 font-montserrat">
+						<Button
+							className="w-full h-12 md:h-14 font-montserrat"
+							onClick={() => router.push("/client-panel/dashboard")}>
 							Sign In
 						</Button>
 						<Button

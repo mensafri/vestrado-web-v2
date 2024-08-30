@@ -82,7 +82,7 @@ const ForgotPasswordForm = () => {
 						size="lg"
 						asChild
 						variant="outline">
-						<Link href={"/forgot-password"}> Back</Link>
+						<Link href={"/sign-in"}> Back</Link>
 					</Button>
 				</div>
 			</div>
