@@ -1,4 +1,6 @@
 import ClientSidebar from "@/components/ClientSidebar";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const ClienPanelLayout = ({
 	children,
@@ -8,7 +10,11 @@ const ClienPanelLayout = ({
 	return (
 		<div className="w-full flex bg-sky-2 flex-row">
 			<ClientSidebar />
-			<div className="flex flex-col size-full">{children}</div>
+			<div className="flex flex-col size-full">
+				<Navbar type="client" />
+				<div className="flex-1 overflow-scroll">{children}</div>
+				<Footer />
+			</div>
 		</div>
 	);
 };

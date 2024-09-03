@@ -15,11 +15,11 @@ const IbSidebar = () => {
 			<nav className="flex flex-col gap-4">
 				<Link
 					href="/ib-panel/dashboard"
-					className="mb-2 cursor-pointer flex items-center gap-2">
+					className="mb-8 cursor-pointer w-44 h-7 relative flex items-center gap-2">
 					<Image
 						src="/icons/logo.png"
-						width={240}
-						height={56}
+						fill
+						className="object-contain"
 						alt="Vestrado Logo"
 					/>
 				</Link>
