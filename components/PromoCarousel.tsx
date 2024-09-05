@@ -31,7 +31,7 @@ const PromoCarousel: React.FC = () => {
 						src={src}
 						alt={`Promo ${index + 1}`}
 						fill
-						objectFit="cover"
+						className="object-cover"
 					/>
 				</div>
 			))}

@@ -55,7 +55,7 @@ const AccountDetails: React.FC = () => {
 					src="/icons/Backpattern.png"
 					alt="Background pattern"
 					layout="fill"
-					objectFit="cover"
+					className="object-cover"
 				/>
 			)}
 
@@ -129,7 +129,7 @@ const AccountDetails: React.FC = () => {
 								Withdraw
 							</Button>
 							<Button className={getButtonStyle()}>
-								<CircleFadingPlus />
+								<CircleChevronRight />
 								Transfer
 							</Button>
 						</>

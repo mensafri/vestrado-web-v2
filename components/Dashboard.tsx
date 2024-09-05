@@ -58,7 +58,7 @@ function StatCard({
 	};
 
 	return (
-		<Card className="w-full sm:w-[25rem] border-0">
+		<Card className="w-full sm:w-[26rem] border-0">
 			<CardHeader>
 				<CardTitle className="text-lg font-semibold">{title}</CardTitle>
 			</CardHeader>
@@ -147,7 +147,7 @@ export default function Dashboard() {
 	};
 
 	return (
-		<div className="flex flex-col sm:flex-row gap-4">
+		<div className="flex flex-col sm:flex-row gap-4 w-full justify-between">
 			<StatCard
 				title="Total Profit"
 				value="$1,230.81"
