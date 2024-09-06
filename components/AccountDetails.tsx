@@ -54,7 +54,7 @@ const AccountDetails: React.FC = () => {
 				<Image
 					src="/icons/Backpattern.png"
 					alt="Background pattern"
-					layout="fill"
+					fill
 					className="object-cover"
 				/>
 			)}

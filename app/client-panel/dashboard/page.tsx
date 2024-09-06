@@ -1,7 +1,9 @@
 import AccountDetails from "@/components/AccountDetails";
+import AccountManager from "@/components/AccountManager";
 import Dashboard from "@/components/Dashboard";
 import MarketOverviewWidget from "@/components/MarketOverviewWidget";
 import PromoCarousel from "@/components/PromoCarousel";
+import QuickAccess from "@/components/QuickAccess";
 import TopInstruments from "@/components/TopInstruments";
 import { transactionsHistoryColumns } from "@/components/transaction-history/columns";
 import { TransactionsHistoryTable } from "@/components/transaction-history/data-table";
@@ -23,6 +25,8 @@ const ClientDashboardPage = () => {
 			<div className="w-1/3 flex flex-col gap-4 items-center">
 				<PromoCarousel />
 				<TopInstruments />
+				<QuickAccess />
+				<AccountManager />
 			</div>
 		</div>
 	);
