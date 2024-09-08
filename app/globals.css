@@ -147,3 +147,21 @@
 	background-color: #fff;
 	padding: 1.5rem;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+	width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background: #cbd5e0; /* Gray 300 */
+	border-radius: 10px;
+	border: 2px solid white; /* Padding for a cleaner look */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+	background: #a0aec0; /* Gray 400 when hovering */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: #edf2f7; /* Light gray background */
+}

@@ -30,29 +30,30 @@ const PaymentDetails = () => {
 					<Link href="/client-panel/accounts/add-payment">Add New Details</Link>
 				</Button>
 			</div>
-			<table className="w-full text-left">
-				<tbody>
-					{paymentData.slice(0, 3).map((payment, index) => (
-						<tr
-							key={index}
-							className="border-b">
-							<td className="py-4">{payment.method}</td>
-							<td className="py-4">{payment.bank}</td>
-							<td className="py-4">
-								<span
-									className={`px-3 py-2 rounded-lg text-sm font-semibold ${
-										payment.status === "Approved"
-											? "bg-green-100 text-green-600"
-											: "bg-red-100 text-red-600"
-									}`}>
-									{payment.status}
-								</span>
-							</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
-			{/* {visiblePayments < paymentData.length && (
+			<div className="max-h-64 overflow-y-auto custom-scrollbar">
+				<table className="w-full text-left">
+					<tbody>
+						{paymentData.map((payment, index) => (
+							<tr
+								key={index}
+								className="border-b">
+								<td className="py-4">{payment.method}</td>
+								<td className="py-4">{payment.bank}</td>
+								<td className="py-4">
+									<span
+										className={`px-3 py-2 rounded-lg text-sm font-semibold ${
+											payment.status === "Approved"
+												? "bg-green-100 text-green-600"
+												: "bg-red-100 text-red-600"
+										}`}>
+										{payment.status}
+									</span>
+								</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+				{/* {visiblePayments < paymentData.length && (
 				<div className="mt-4 text-center">
 					<Button
 						className="bg-gray-100 text-black border border-gray-300 rounded-lg px-4 py-2"
@@ -61,6 +62,7 @@ const PaymentDetails = () => {
 					</Button>
 				</div>
 			)} */}
+			</div>
 		</div>
 	);
 };
