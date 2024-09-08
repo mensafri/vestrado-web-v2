@@ -58,19 +58,21 @@ function StatCard({
 	};
 
 	return (
-		<Card className="w-full sm:w-[26rem] border-0">
+		<Card className="w-full sm:w-[26rem] border-0 rounded-3xl p-2 ">
 			<CardHeader>
-				<CardTitle className="text-lg font-semibold">{title}</CardTitle>
+				<CardTitle className="text-lg font-semibold text-gray-7">
+					{title}
+				</CardTitle>
+				<span className="text-4xl font-semibold text-gray-7">{value}</span>
 			</CardHeader>
-			<CardContent className="p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+			<CardContent className="p-6 flex flex-col sm:flex-row justify-between items-center">
 				<div className="text-center sm:text-left">
-					<span className="text-4xl font-bold text-gray-900">{value}</span>
 					<Popover>
 						<PopoverTrigger asChild>
 							<Button
 								variant={"outline"}
 								className={cn(
-									"w-full sm:w-auto mt-4 sm:mt-2 justify-start text-left font-normal",
+									"w-full sm:w-auto justify-start text-left font-normal",
 									!selectedDate && "text-muted-foreground",
 								)}>
 								<CalendarIcon className="mr-2 h-4 w-4" />
