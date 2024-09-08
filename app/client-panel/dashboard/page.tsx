@@ -2,6 +2,7 @@ import AccountDetails from "@/components/AccountDetails";
 import AccountManager from "@/components/AccountManager";
 import CopyTrading from "@/components/CopyTrading";
 import Dashboard from "@/components/Dashboard";
+import LatestUpdates from "@/components/LatestUpdates";
 import MarketOverviewWidget from "@/components/MarketOverviewWidget";
 import PromoCarousel from "@/components/PromoCarousel";
 import QuickAccess from "@/components/QuickAccess";
@@ -23,6 +24,7 @@ const ClientDashboardPage = () => {
 				/>
 				<MarketOverviewWidget />
 				<CopyTrading />
+				<LatestUpdates />
 			</div>
 			<div className="w-1/3 flex flex-col gap-4 items-center">
 				<PromoCarousel />
