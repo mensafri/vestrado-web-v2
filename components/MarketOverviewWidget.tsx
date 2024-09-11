@@ -1,8 +1,5 @@
 "use client";
-
 import dynamic from "next/dynamic";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import CustomLoading from "./CustomLoading";
 
 const MarketOverview = dynamic(
@@ -86,7 +83,7 @@ const MarketOverviewWidget = () => {
 	];
 
 	return (
-		<div>
+		<div className="w-full">
 			<div className="flex justify-between items-center px-6">
 				<h2 className="text-lg font-bold">Instruments Overview</h2>
 				<p className="bg-white text-gray-3 rounded-full px-6 py-2 border font-medium text-sm">

@@ -20,7 +20,7 @@ const PromoCarousel: React.FC = () => {
 	}, []);
 
 	return (
-		<div className="relative w-[25rem] h-[25rem] overflow-hidden rounded-xl">
+		<div className="relative w-full h-[25rem] overflow-hidden rounded-xl">
 			{promoImages.map((src, index) => (
 				<div
 					key={index}

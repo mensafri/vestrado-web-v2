@@ -13,7 +13,7 @@ import { transactionHistoryData } from "@/components/transaction-history/dummy";
 
 const ClientDashboardPage = () => {
 	return (
-		<div className="flex flex-row w-full justify-between p-4 space-x-4 ">
+		<div className="flex flex-row w-full justify-between p-4 space-x-4">
 			<div className="w-2/3 flex flex-col gap-4">
 				<AccountDetails />
 				<Dashboard />

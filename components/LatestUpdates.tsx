@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { Button } from "./ui/button";
 
 const LatestUpdates = () => {
 	const updates = [
@@ -20,8 +18,8 @@ const LatestUpdates = () => {
 	];
 
 	return (
-		<div className="w-full p-6">
-			<div className="flex justify-between items-center mb-6 px-2">
+		<div className="w-full">
+			<div className="flex justify-between items-center mb-6 px-6">
 				<h2 className="text-lg font-bold">Latest Updates from Vestrado</h2>
 				<div className="flex space-x-2 items-center">
 					<Link

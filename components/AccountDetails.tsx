@@ -46,6 +46,16 @@ const AccountDetails: React.FC = () => {
 		}
 	};
 
+	const getButtonClass = () => {
+		if (selectedAccount === "Live Account (35281)") {
+			return "bg-black text-white";
+		} else if (selectedAccount === "Local Depositor (27348)") {
+			return "bg-[#0A324E] text-white";
+		} else {
+			return "bg-[#EFEFEF] text-gray-700";
+		}
+	};
+
 	return (
 		<div
 			className={`relative flex justify-between items-center p-8 ${getBackgroundColor()} rounded-xl w-full`}>
@@ -80,13 +90,7 @@ const AccountDetails: React.FC = () => {
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
 						<Button
-							className={`${
-								selectedAccount === "Live Account (35281)"
-									? "bg-black text-white"
-									: selectedAccount === "Local Depositor (27348)"
-									? "bg-[#0A324E] text-white"
-									: "bg-[#EFEFEF] text-gray-700"
-							} px-4 py-2 rounded-full flex items-center`}>
+							className={`${getButtonClass()} px-4 py-2 rounded-full flex items-center`}>
 							{selectedAccount}
 							<ChevronDown className="w-4 h-4 ml-2" />
 						</Button>
