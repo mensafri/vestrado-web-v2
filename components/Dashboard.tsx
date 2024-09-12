@@ -30,7 +30,7 @@ function StatCard({
 	percentage,
 	date,
 	chartColors,
-}: StatCardProps) {
+}: Readonly<StatCardProps>) {
 	const [selectedDate, setSelectedDate] = React.useState<Date | undefined>(
 		date,
 	);

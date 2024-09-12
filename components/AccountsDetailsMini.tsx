@@ -71,7 +71,7 @@ const AccountDetailsMini: React.FC = () => {
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
 						<Button
-							className={`${getButtonStyles()} px-4 py-2 rounded-full flex items-center w-full justify-between`}>
+							className={`${getButtonStyles()} px-4 py-2 rounded-full flex items-center justify-between`}>
 							{selectedAccount}
 							<ChevronDown className="w-4 h-4 ml-2" />
 						</Button>

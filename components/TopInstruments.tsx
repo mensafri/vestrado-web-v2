@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
-import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import {
 	Popover,
@@ -11,6 +10,7 @@ import {
 	PopoverTrigger,
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
+import Image from "next/image";
 
 const TopInstruments = () => {
 	const [selectedDate, setSelectedDate] = useState<Date | undefined>(
@@ -66,10 +66,12 @@ const TopInstruments = () => {
 				<div
 					key={index}
 					className="flex items-center justify-center gap-4 mb-6">
-					<img
+					<Image
 						src={instrument.icon}
 						alt={instrument.symbol}
 						className="w-10 h-10"
+						width={240}
+						height={240}
 					/>
 					<div className="flex flex-col w-full">
 						<div className="flex items-center justify-between">

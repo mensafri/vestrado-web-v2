@@ -5,7 +5,7 @@ import QuickAccess from "@/components/QuickAccess";
 import TradingSummary from "@/components/TradingSummary";
 import { transactionsHistoryColumns } from "@/components/transaction-history/columns";
 import { TransactionsHistoryTable } from "@/components/transaction-history/data-table";
-import { transactionHistoryData } from "@/components/transaction-history/dummy";
+import { transactionHistoryData } from "@/lib/data";
 
 const ClientAccountPage = () => {
 	return (

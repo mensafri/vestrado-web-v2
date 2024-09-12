@@ -3,15 +3,14 @@
 import { ColumnDef } from "@tanstack/react-table";
 import {
 	ArrowUpDown,
+	CircleChevronRight,
 	CircleFadingPlus,
 	CircleMinus,
-	CircleChevronRight,
 } from "lucide-react";
 import { Button } from "../ui/button";
 import { format } from "date-fns";
 
-// Define the columns for the table
-export const transactionsHistoryColumns: ColumnDef<TransactionHistory>[] = [
+export const fullTransactionsHistoryColumns: ColumnDef<TransactionHistory>[] = [
 	{
 		accessorKey: "type",
 		header: "Type",
@@ -74,7 +73,6 @@ export const transactionsHistoryColumns: ColumnDef<TransactionHistory>[] = [
 			);
 		},
 		cell: ({ row }) => {
-			// Safely casting dateCreated as a Date object
 			const date = new Date(row.getValue("dateCreated") as string);
 			return format(date, "yyyy-MM-dd hh:mm a");
 		},
@@ -90,6 +88,31 @@ export const transactionsHistoryColumns: ColumnDef<TransactionHistory>[] = [
 					<ArrowUpDown className="ml-2 h-4 w-4" />
 				</Button>
 			);
+		},
+	},
+	{
+		accessorKey: "account",
+		header: "Account",
+		cell: ({ row }) => {
+			return <span>{row.getValue("account")}</span>;
+		},
+	},
+	{
+		accessorKey: "amount",
+		header: "Amount",
+		cell: ({ row }) => {
+			return (
+				<span>
+					{row.getValue("amount")} {row.getValue("currency")}
+				</span>
+			);
+		},
+	},
+	{
+		accessorKey: "currency",
+		header: "Currency",
+		cell: ({ row }) => {
+			return <span>{row.getValue("currency")}</span>;
 		},
 	},
 	{
@@ -116,6 +139,9 @@ export const transactionsHistoryColumns: ColumnDef<TransactionHistory>[] = [
 					break;
 				case "Declined":
 					statusColor = "bg-red-100 text-red-600";
+					break;
+				case "Completed":
+					statusColor = "bg-blue-100 text-blue-600";
 					break;
 			}
 

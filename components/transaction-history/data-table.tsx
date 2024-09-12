@@ -31,7 +31,7 @@ export function TransactionsHistoryTable<TData, TValue>({
 	columns,
 	data,
 	pageSize,
-}: DataTableProps<TData, TValue>) {
+}: Readonly<DataTableProps<TData, TValue>>) {
 	const [sorting, setSorting] = React.useState<SortingState>([]);
 	const [pagination, setPagination] = React.useState({
 		pageIndex: 0, //initial page index

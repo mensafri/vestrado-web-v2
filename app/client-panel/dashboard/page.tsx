@@ -9,7 +9,7 @@ import QuickAccess from "@/components/QuickAccess";
 import TopInstruments from "@/components/TopInstruments";
 import { transactionsHistoryColumns } from "@/components/transaction-history/columns";
 import { TransactionsHistoryTable } from "@/components/transaction-history/data-table";
-import { transactionHistoryData } from "@/components/transaction-history/dummy";
+import { transactionHistoryData } from "@/lib/data";
 
 const ClientDashboardPage = () => {
 	return (
