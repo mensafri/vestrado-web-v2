@@ -16,3 +16,10 @@ declare type TransactionHistory = {
 	status: "Pending" | "Approved" | "Declined" | "Completed";
 	account: string;
 };
+
+declare type Promotion = {
+	id: number;
+	imageSrc: string;
+	title: string;
+	label: string;
+};

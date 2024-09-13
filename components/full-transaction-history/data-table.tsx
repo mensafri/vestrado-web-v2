@@ -40,7 +40,7 @@ export function FullTransactionsHistoryTable<TValue>({
 	columns,
 	data,
 	pageSize,
-}: DataTableProps<TValue>) {
+}: Readonly<DataTableProps<TValue>>) {
 	const [selectedRange, setSelectedRange] = useState<DateRange | undefined>({
 		from: new Date(),
 		to: addDays(new Date(), 7),
