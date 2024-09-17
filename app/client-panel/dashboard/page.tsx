@@ -1,7 +1,7 @@
 import AccountDetails from "@/components/AccountDetails";
 import AccountManager from "@/components/AccountManager";
 import CopyTrading from "@/components/CopyTrading";
-import Dashboard from "@/components/Dashboard";
+import ClientDashboard from "@/components/ClientDashboard";
 import LatestUpdates from "@/components/LatestUpdates";
 import MarketOverviewWidget from "@/components/MarketOverviewWidget";
 import PromoCarousel from "@/components/PromoCarousel";
@@ -16,7 +16,7 @@ const ClientDashboardPage = () => {
 		<div className="flex flex-row w-full justify-between p-4 space-x-4">
 			<div className="w-2/3 flex flex-col gap-4">
 				<AccountDetails />
-				<Dashboard />
+				<ClientDashboard />
 				<TransactionsHistoryTable
 					columns={transactionsHistoryColumns}
 					data={transactionHistoryData}

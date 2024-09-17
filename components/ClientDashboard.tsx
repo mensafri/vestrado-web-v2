@@ -135,7 +135,7 @@ function StatCard({
 	);
 }
 
-export default function Dashboard() {
+export default function ClientDashboard() {
 	const currentDate = new Date();
 
 	const profitChartColors = {
