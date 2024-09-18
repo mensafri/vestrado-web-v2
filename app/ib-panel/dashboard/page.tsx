@@ -1,7 +1,10 @@
 import AccountDetails from "@/components/AccountDetails";
 import ClientRegistrationPerformance from "@/components/ClientRegistrationPerformance";
 import { IbDashboard } from "@/components/IbDashboard";
+import { IbTiersCard } from "@/components/IbTiersCard";
 import PromoCarousel from "@/components/PromoCarousel";
+import QuickAccess from "@/components/QuickAccess";
+import { StatCard } from "@/components/StatCard";
 
 const IbDashboardPage = () => {
 	return (
@@ -13,6 +16,26 @@ const IbDashboardPage = () => {
 			</div>
 			<div className="w-1/3 flex flex-col gap-4 items-center">
 				<PromoCarousel />
+				<IbTiersCard />
+				<StatCard
+					title="Registration"
+					total={100}
+					unit=""
+					value={72}
+				/>
+				<StatCard
+					title="Commission"
+					total={10000}
+					unit="$"
+					value={-870}
+				/>
+				<StatCard
+					title="Commission"
+					total={1000}
+					unit="$"
+					value={-123}
+				/>
+				<QuickAccess />
 			</div>
 		</div>
 	);

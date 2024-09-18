@@ -49,7 +49,7 @@ export default function ClientRegistrationPerformance() {
 	}, [dateRange]);
 
 	return (
-		<Card className="w-full max-w-3xl">
+		<Card className="w-full border-0 shadow-none">
 			<CardHeader className="flex flex-row items-center justify-between pb-2">
 				<CardTitle className="text-base font-medium">
 					Client Registration Performance

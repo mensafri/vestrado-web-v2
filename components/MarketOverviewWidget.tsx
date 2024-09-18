@@ -96,7 +96,7 @@ const MarketOverviewWidget = () => {
 				<MarketOverview
 					colorTheme="light"
 					isTransparent
-					width={820}
+					width={780}
 					height={550}
 					tabs={tabsValue}
 					showChart={false}
