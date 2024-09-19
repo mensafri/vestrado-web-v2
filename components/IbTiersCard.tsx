@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { format } from "date-fns";
 import { PieChart, Pie } from "recharts";
 
-export function IbTiersCard() {
+export default function IbTiersCard() {
 	const [selectedDate, setSelectedDate] = React.useState<Date | undefined>(
 		new Date(),
 	);

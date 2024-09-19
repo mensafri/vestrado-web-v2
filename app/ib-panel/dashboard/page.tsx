@@ -1,10 +1,24 @@
+import dynamic from "next/dynamic";
+import CustomLoading from "@/components/CustomLoading"; // Make sure to create this or use an existing loader
+import CopyTrading from "@/components/CopyTrading";
+import LatestUpdates from "@/components/LatestUpdates";
+
 import AccountDetails from "@/components/AccountDetails";
+import BdManager from "@/components/BdManager";
 import ClientRegistrationPerformance from "@/components/ClientRegistrationPerformance";
-import { IbDashboard } from "@/components/IbDashboard";
-import { IbTiersCard } from "@/components/IbTiersCard";
+import DirectReferralsTable from "@/components/DirectReferralsTable";
+import IbDashboard from "@/components/IbDashboard";
 import PromoCarousel from "@/components/PromoCarousel";
 import QuickAccess from "@/components/QuickAccess";
-import { StatCard } from "@/components/StatCard";
+const IbTiersCard = dynamic(() => import("@/components/IbTiersCard"), {
+	ssr: false,
+	loading: () => <CustomLoading />,
+});
+
+const StatCard = dynamic(() => import("@/components/StatCard"), {
+	ssr: false,
+	loading: () => <CustomLoading />,
+});
 
 const IbDashboardPage = () => {
 	return (
@@ -13,6 +27,9 @@ const IbDashboardPage = () => {
 				<AccountDetails />
 				<IbDashboard />
 				<ClientRegistrationPerformance />
+				<DirectReferralsTable />
+				<CopyTrading type="ib" />
+				<LatestUpdates type="ib" />
 			</div>
 			<div className="w-1/3 flex flex-col gap-4 items-center">
 				<PromoCarousel />
@@ -36,6 +53,7 @@ const IbDashboardPage = () => {
 					value={-123}
 				/>
 				<QuickAccess />
+				<BdManager />
 			</div>
 		</div>
 	);

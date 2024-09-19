@@ -787,3 +787,286 @@ export const transactionHistoryData: TransactionHistory[] = [
 		status: "Completed",
 	},
 ];
+
+export const referralsData: Referral[] = [
+	{
+		name: "Beyonce Knowles",
+		balance: 4729.0,
+		commission: 470.0,
+		country: "Singapore",
+		date: new Date(2024, 8, 19), // 19th September 2024
+	},
+	{
+		name: "Jay-Z Carter",
+		balance: 3849.0,
+		commission: 380.0,
+		country: "USA",
+		date: new Date(2024, 8, 18), // 18th September 2024
+	},
+	{
+		name: "Ariana Grande",
+		balance: 3120.0,
+		commission: 300.0,
+		country: "Canada",
+		date: new Date(2024, 8, 17), // 17th September 2024
+	},
+	{
+		name: "Taylor Swift",
+		balance: 5099.0,
+		commission: 500.0,
+		country: "UK",
+		date: new Date(2024, 8, 16), // 16th September 2024
+	},
+	{
+		name: "Drake Graham",
+		balance: 2450.0,
+		commission: 240.0,
+		country: "Australia",
+		date: new Date(2024, 8, 15), // 15th September 2024
+	},
+	{
+		name: "Kanye West",
+		balance: 6200.0,
+		commission: 600.0,
+		country: "USA",
+		date: new Date(2024, 8, 14), // 14th September 2024
+	},
+	{
+		name: "Selena Gomez",
+		balance: 4750.0,
+		commission: 460.0,
+		country: "Spain",
+		date: new Date(2024, 8, 13), // 13th September 2024
+	},
+	{
+		name: "Rihanna Fenty",
+		balance: 3250.0,
+		commission: 300.0,
+		country: "France",
+		date: new Date(2024, 8, 12), // 12th September 2024
+	},
+	{
+		name: "Justin Bieber",
+		balance: 4125.0,
+		commission: 410.0,
+		country: "Germany",
+		date: new Date(2024, 8, 11), // 11th September 2024
+	},
+	{
+		name: "Billie Eilish",
+		balance: 3890.0,
+		commission: 380.0,
+		country: "New Zealand",
+		date: new Date(2024, 8, 10), // 10th September 2024
+	},
+	{
+		name: "Shawn Mendes",
+		balance: 4600.0,
+		commission: 450.0,
+		country: "Brazil",
+		date: new Date(2024, 8, 9), // 9th September 2024
+	},
+	{
+		name: "Camila Cabello",
+		balance: 3150.0,
+		commission: 300.0,
+		country: "Mexico",
+		date: new Date(2024, 8, 8), // 8th September 2024
+	},
+	{
+		name: "Bruno Mars",
+		balance: 5125.0,
+		commission: 500.0,
+		country: "Philippines",
+		date: new Date(2024, 8, 7), // 7th September 2024
+	},
+	{
+		name: "Katy Perry",
+		balance: 4725.0,
+		commission: 470.0,
+		country: "Japan",
+		date: new Date(2024, 8, 6), // 6th September 2024
+	},
+	{
+		name: "Ed Sheeran",
+		balance: 5200.0,
+		commission: 510.0,
+		country: "Ireland",
+		date: new Date(2024, 8, 5), // 5th September 2024
+	},
+	{
+		name: "Adele Adkins",
+		balance: 3750.0,
+		commission: 360.0,
+		country: "South Africa",
+		date: new Date(2024, 8, 4), // 4th September 2024
+	},
+	{
+		name: "Dua Lipa",
+		balance: 3895.0,
+		commission: 370.0,
+		country: "Italy",
+		date: new Date(2024, 8, 3), // 3rd September 2024
+	},
+	{
+		name: "Zayn Malik",
+		balance: 4100.0,
+		commission: 400.0,
+		country: "UAE",
+		date: new Date(2024, 8, 2), // 2nd September 2024
+	},
+	{
+		name: "Harry Styles",
+		balance: 4575.0,
+		commission: 450.0,
+		country: "USA",
+		date: new Date(2024, 8, 1), // 1st September 2024
+	},
+	{
+		name: "Lizzo Jefferson",
+		balance: 3250.0,
+		commission: 310.0,
+		country: "Argentina",
+		date: new Date(2024, 7, 31), // 31st August 2024
+	},
+	{
+		name: "Halsey Frangipane",
+		balance: 3400.0,
+		commission: 320.0,
+		country: "France",
+		date: new Date(2024, 7, 30), // 30th August 2024
+	},
+	{
+		name: "Sam Smith",
+		balance: 4550.0,
+		commission: 440.0,
+		country: "UK",
+		date: new Date(2024, 7, 29), // 29th August 2024
+	},
+	{
+		name: "The Weeknd",
+		balance: 4980.0,
+		commission: 490.0,
+		country: "Canada",
+		date: new Date(2024, 7, 28), // 28th August 2024
+	},
+	{
+		name: "Olivia Rodrigo",
+		balance: 2900.0,
+		commission: 280.0,
+		country: "Singapore",
+		date: new Date(2024, 7, 27), // 27th August 2024
+	},
+	{
+		name: "Doja Cat",
+		balance: 3100.0,
+		commission: 300.0,
+		country: "South Korea",
+		date: new Date(2024, 7, 26), // 26th August 2024
+	},
+	{
+		name: "Charlie Puth",
+		balance: 4550.0,
+		commission: 440.0,
+		country: "USA",
+		date: new Date(2024, 7, 25), // 25th August 2024
+	},
+	{
+		name: "Lana Del Rey",
+		balance: 3980.0,
+		commission: 390.0,
+		country: "Italy",
+		date: new Date(2024, 7, 24), // 24th August 2024
+	},
+	{
+		name: "Post Malone",
+		balance: 5100.0,
+		commission: 500.0,
+		country: "USA",
+		date: new Date(2024, 7, 23), // 23rd August 2024
+	},
+	{
+		name: "Nicki Minaj",
+		balance: 3900.0,
+		commission: 380.0,
+		country: "Canada",
+		date: new Date(2024, 7, 22), // 22nd August 2024
+	},
+	{
+		name: "Cardi B",
+		balance: 3700.0,
+		commission: 350.0,
+		country: "Brazil",
+		date: new Date(2024, 7, 21), // 21st August 2024
+	},
+	{
+		name: "Travis Scott",
+		balance: 4250.0,
+		commission: 420.0,
+		country: "Japan",
+		date: new Date(2024, 7, 20), // 20th August 2024
+	},
+	{
+		name: "Megan Thee Stallion",
+		balance: 3750.0,
+		commission: 360.0,
+		country: "South Africa",
+		date: new Date(2024, 7, 19), // 19th August 2024
+	},
+	{
+		name: "SZA Solana",
+		balance: 3350.0,
+		commission: 320.0,
+		country: "Spain",
+		date: new Date(2024, 7, 18), // 18th August 2024
+	},
+	{
+		name: "Tyler The Creator",
+		balance: 3900.0,
+		commission: 380.0,
+		country: "Singapore",
+		date: new Date(2024, 7, 17), // 17th August 2024
+	},
+	{
+		name: "J Balvin",
+		balance: 4100.0,
+		commission: 400.0,
+		country: "Colombia",
+		date: new Date(2024, 7, 16), // 16th August 2024
+	},
+	{
+		name: "Bad Bunny",
+		balance: 4550.0,
+		commission: 440.0,
+		country: "Mexico",
+		date: new Date(2024, 7, 15), // 15th August 2024
+	},
+	{
+		name: "Rosalia Vila",
+		balance: 3750.0,
+		commission: 370.0,
+		country: "Argentina",
+		date: new Date(2024, 7, 14), // 14th August 2024
+	},
+	{
+		name: "Maluma Arias",
+		balance: 3400.0,
+		commission: 330.0,
+		country: "Brazil",
+		date: new Date(2024, 7, 13), // 13th August 2024
+	},
+	{
+		name: "Anitta Machado",
+		balance: 3700.0,
+		commission: 360.0,
+		country: "Portugal",
+		date: new Date(2024, 7, 12), // 12th August 2024
+	},
+	{
+		name: "Shakira Mebarak",
+		balance: 4800.0,
+		commission: 470.0,
+		country: "Colombia",
+		date: new Date(2024, 7, 11), // 11th August 2024
+	},
+];

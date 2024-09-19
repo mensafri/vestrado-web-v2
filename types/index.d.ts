@@ -23,3 +23,11 @@ declare type Promotion = {
 	title: string;
 	label: string;
 };
+
+declare type Referral = {
+	name: string;
+	balance: number;
+	commission: number;
+	country: string;
+	date: Date;
+};
