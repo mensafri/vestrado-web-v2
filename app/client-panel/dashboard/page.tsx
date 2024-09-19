@@ -23,8 +23,8 @@ const ClientDashboardPage = () => {
 					pageSize={4}
 				/>
 				<MarketOverviewWidget />
-				<CopyTrading />
-				<LatestUpdates />
+				<CopyTrading type="client" />
+				<LatestUpdates type="client" />
 			</div>
 			<div className="w-1/3 flex flex-col gap-4 items-center">
 				<PromoCarousel />

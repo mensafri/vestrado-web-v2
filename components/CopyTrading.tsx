@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const CopyTrading = () => {
+const CopyTrading = ({ type }: { type: "ib" | "client" }) => {
 	const traders = [
 		{
 			name: "Raheem Rod",
@@ -34,7 +34,7 @@ const CopyTrading = () => {
 			<div className="w-full flex justify-between items-center px-6">
 				<h2 className="text-lg font-bold">Vestrado’s Copy Trading</h2>
 				<Link
-					href="/client-panel/copytrading"
+					href={`/${type == "ib" ? "ib-panel" : "client-panel"}/copytrading`}
 					className="flex items-center bg-white text-gray-3 rounded-full px-6 py-2 border font-medium text-sm">
 					View All
 					<svg
@@ -56,7 +56,7 @@ const CopyTrading = () => {
 				{traders.map((trader, index) => (
 					<div
 						key={index}
-						className="p-6 rounded-3xl w-[26rem] transition-all duration-1000 bg-white hover:bg-gradient-to-t hover:from-[#171821] hover:to-[#0FE00B]"
+						className="p-6 rounded-3xl w-[24rem] transition-all duration-1000 bg-white hover:bg-gradient-to-t hover:from-[#171821] hover:to-[#0FE00B]"
 						onMouseEnter={() => setIsHovered(index)}
 						onMouseLeave={() => setIsHovered(null)}>
 						<div className="flex justify-between items-center">

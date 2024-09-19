@@ -22,7 +22,7 @@ interface StatCardProps {
 	unit: string; // The unit of the value (like $, Lots, etc.)
 }
 
-export function StatCard({
+export default function StatCard({
 	title,
 	value,
 	total,

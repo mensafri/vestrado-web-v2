@@ -1,4 +1,10 @@
-import { StatCard } from "./StatCard";
+import dynamic from "next/dynamic";
+import CustomLoading from "@/components/CustomLoading";
+
+const StatCard = dynamic(() => import("@/components/StatCard"), {
+	ssr: false,
+	loading: () => <CustomLoading />,
+});
 
 export default function ClientDashboard() {
 	return (

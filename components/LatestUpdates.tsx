@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const LatestUpdates = () => {
+const LatestUpdates = ({ type }: { type: "ib" | "client" }) => {
 	const updates = [
 		{
 			id: 1,
@@ -23,7 +23,7 @@ const LatestUpdates = () => {
 				<h2 className="text-lg font-bold">Latest Updates from Vestrado</h2>
 				<div className="flex space-x-2 items-center">
 					<Link
-						href="/client-panel/promotions"
+						href={`/${type == "ib" ? "ib-panel" : "client-panel"}/promotions`}
 						className="flex items-center bg-white text-gray-3 rounded-full px-6 py-2 border font-medium text-sm">
 						View All
 						<svg
