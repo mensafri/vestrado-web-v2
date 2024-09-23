@@ -31,3 +31,24 @@ declare type Referral = {
 	country: string;
 	date: Date;
 };
+
+declare type AccountData = {
+	account: string;
+	accountType: number;
+	country: string;
+	registrationDate: string;
+	isIb: boolean;
+	level: string;
+	commissionLots: number;
+	commissionReceived: number;
+};
+
+declare type ClientData = {
+	referrals: string;
+	country: string;
+	registrationDate: string;
+	isIb: boolean;
+	level: string;
+	commissionLots: number;
+	commissionReceived: number;
+};

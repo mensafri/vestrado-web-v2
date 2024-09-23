@@ -1,6 +1,8 @@
-import { addDays } from "date-fns";
+import { addDays, format } from "date-fns";
 
 const now = new Date();
+const formatDate = (daysAgo: number) =>
+	format(new Date(now.setDate(now.getDate() - daysAgo)), "dd MMMM yyyy");
 
 export const trades: Trade[] = [
 	{
@@ -1068,5 +1070,315 @@ export const referralsData: Referral[] = [
 		commission: 470.0,
 		country: "Colombia",
 		date: new Date(2024, 7, 11), // 11th August 2024
+	},
+];
+
+export const accountData: AccountData[] = [
+	{
+		account: "82763",
+		accountType: 4729.0,
+		country: "Singapore",
+		registrationDate: formatDate(7), // 7 hari yang lalu
+		isIb: true,
+		level: "Level 2",
+		commissionLots: 78,
+		commissionReceived: 78,
+	},
+	{
+		account: "82764",
+		accountType: 5000.0,
+		country: "USA",
+		registrationDate: formatDate(6), // 6 hari yang lalu
+		isIb: true,
+		level: "Level 3",
+		commissionLots: 65,
+		commissionReceived: 70,
+	},
+	{
+		account: "82765",
+		accountType: 4500.0,
+		country: "UK",
+		registrationDate: formatDate(5), // 5 hari yang lalu
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 60,
+		commissionReceived: 50,
+	},
+	{
+		account: "82766",
+		accountType: 4300.0,
+		country: "Germany",
+		registrationDate: formatDate(4), // 4 hari yang lalu
+		isIb: true,
+		level: "Level 2",
+		commissionLots: 90,
+		commissionReceived: 88,
+	},
+	{
+		account: "82767",
+		accountType: 4600.0,
+		country: "France",
+		registrationDate: formatDate(3), // 3 hari yang lalu
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 75,
+		commissionReceived: 70,
+	},
+	{
+		account: "82768",
+		accountType: 5100.0,
+		country: "Spain",
+		registrationDate: formatDate(2), // 2 hari yang lalu
+		isIb: true,
+		level: "Level 3",
+		commissionLots: 82,
+		commissionReceived: 79,
+	},
+	{
+		account: "82769",
+		accountType: 4950.0,
+		country: "Italy",
+		registrationDate: formatDate(1), // Kemarin
+		isIb: true,
+		level: "Level 2",
+		commissionLots: 90,
+		commissionReceived: 87,
+	},
+	{
+		account: "82770",
+		accountType: 4800.0,
+		country: "Canada",
+		registrationDate: formatDate(0), // Hari ini
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 70,
+		commissionReceived: 68,
+	},
+	{
+		account: "82771",
+		accountType: 5200.0,
+		country: "Australia",
+		registrationDate: formatDate(7),
+		isIb: true,
+		level: "Level 3",
+		commissionLots: 100,
+		commissionReceived: 97,
+	},
+	{
+		account: "82772",
+		accountType: 5300.0,
+		country: "Brazil",
+		registrationDate: formatDate(6),
+		isIb: true,
+		level: "Level 3",
+		commissionLots: 102,
+		commissionReceived: 101,
+	},
+	{
+		account: "82773",
+		accountType: 4750.0,
+		country: "Argentina",
+		registrationDate: formatDate(5),
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 80,
+		commissionReceived: 75,
+	},
+	{
+		account: "82774",
+		accountType: 5050.0,
+		country: "Japan",
+		registrationDate: formatDate(4),
+		isIb: true,
+		level: "Level 2",
+		commissionLots: 85,
+		commissionReceived: 80,
+	},
+	{
+		account: "82775",
+		accountType: 4850.0,
+		country: "Mexico",
+		registrationDate: formatDate(3),
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 78,
+		commissionReceived: 76,
+	},
+	{
+		account: "82776",
+		accountType: 4900.0,
+		country: "Portugal",
+		registrationDate: formatDate(2),
+		isIb: true,
+		level: "Level 2",
+		commissionLots: 82,
+		commissionReceived: 80,
+	},
+	{
+		account: "82777",
+		accountType: 4700.0,
+		country: "South Africa",
+		registrationDate: formatDate(1),
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 79,
+		commissionReceived: 77,
+	},
+	{
+		account: "82778",
+		accountType: 5250.0,
+		country: "New Zealand",
+		registrationDate: formatDate(0),
+		isIb: true,
+		level: "Level 3",
+		commissionLots: 101,
+		commissionReceived: 99,
+	},
+];
+
+export const clientData: ClientData[] = [
+	{
+		referrals: "82763",
+		country: "Singapore",
+		registrationDate: formatDate(7), // 7 hari yang lalu
+		isIb: true,
+		level: "Level 2",
+		commissionLots: 78,
+		commissionReceived: 78,
+	},
+	{
+		referrals: "82764",
+		country: "USA",
+		registrationDate: formatDate(6), // 6 hari yang lalu
+		isIb: true,
+		level: "Level 3",
+		commissionLots: 65,
+		commissionReceived: 70,
+	},
+	{
+		referrals: "82765",
+		country: "UK",
+		registrationDate: formatDate(5), // 5 hari yang lalu
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 60,
+		commissionReceived: 50,
+	},
+	{
+		referrals: "82766",
+		country: "Germany",
+		registrationDate: formatDate(4), // 4 hari yang lalu
+		isIb: true,
+		level: "Level 2",
+		commissionLots: 90,
+		commissionReceived: 88,
+	},
+	{
+		referrals: "82767",
+		country: "France",
+		registrationDate: formatDate(3), // 3 hari yang lalu
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 75,
+		commissionReceived: 70,
+	},
+	{
+		referrals: "82768",
+		country: "Spain",
+		registrationDate: formatDate(2), // 2 hari yang lalu
+		isIb: true,
+		level: "Level 3",
+		commissionLots: 82,
+		commissionReceived: 79,
+	},
+	{
+		referrals: "82769",
+		country: "Italy",
+		registrationDate: formatDate(1), // Kemarin
+		isIb: true,
+		level: "Level 2",
+		commissionLots: 90,
+		commissionReceived: 87,
+	},
+	{
+		referrals: "82770",
+		country: "Canada",
+		registrationDate: formatDate(0), // Hari ini
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 70,
+		commissionReceived: 68,
+	},
+	{
+		referrals: "82771",
+		country: "Australia",
+		registrationDate: formatDate(7),
+		isIb: true,
+		level: "Level 3",
+		commissionLots: 100,
+		commissionReceived: 97,
+	},
+	{
+		referrals: "82772",
+		country: "Brazil",
+		registrationDate: formatDate(6),
+		isIb: true,
+		level: "Level 3",
+		commissionLots: 102,
+		commissionReceived: 101,
+	},
+	{
+		referrals: "82773",
+		country: "Argentina",
+		registrationDate: formatDate(5),
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 80,
+		commissionReceived: 75,
+	},
+	{
+		referrals: "82774",
+		country: "Japan",
+		registrationDate: formatDate(4),
+		isIb: true,
+		level: "Level 2",
+		commissionLots: 85,
+		commissionReceived: 80,
+	},
+	{
+		referrals: "82775",
+		country: "Mexico",
+		registrationDate: formatDate(3),
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 78,
+		commissionReceived: 76,
+	},
+	{
+		referrals: "82776",
+		country: "Portugal",
+		registrationDate: formatDate(2),
+		isIb: true,
+		level: "Level 2",
+		commissionLots: 82,
+		commissionReceived: 80,
+	},
+	{
+		referrals: "82777",
+		country: "South Africa",
+		registrationDate: formatDate(1),
+		isIb: false,
+		level: "Level 1",
+		commissionLots: 79,
+		commissionReceived: 77,
+	},
+	{
+		referrals: "82778",
+		country: "New Zealand",
+		registrationDate: formatDate(0),
+		isIb: true,
+		level: "Level 3",
+		commissionLots: 101,
+		commissionReceived: 99,
 	},
 ];
