@@ -1,4 +1,4 @@
-import { addDays, format } from "date-fns";
+import { addDays, format, subDays } from "date-fns";
 
 const now = new Date();
 const formatDate = (daysAgo: number) =>
@@ -1382,3 +1382,20 @@ export const clientData: ClientData[] = [
 		commissionReceived: 99,
 	},
 ];
+
+export const notificationsData: NotificationData[] = Array.from(
+	{ length: 40 },
+	(_, i) => {
+		const notificationDate = subDays(new Date(), i); // Create a date starting from today and going back 40 days
+		return {
+			id: i + 1,
+			title: i % 2 === 0 ? "New Payment Method" : "Vestrado Support Team",
+			content:
+				i % 2 === 0
+					? "New Deposit and Withdrawal Method available"
+					: "[Important] Verify your account to start using Vestrado",
+			date: notificationDate,
+			iconUrl: i % 2 === 0 ? "/icons/notif-1.png" : "/icons/notif-2.png",
+		};
+	},
+);

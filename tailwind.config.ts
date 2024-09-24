@@ -65,6 +65,7 @@ const config = {
 					10: "#F8F8F8",
 					11: "#F4F4F4",
 					12: "#E6E6E6",
+					13: "#FDFCFC",
 				},
 				gray: {
 					1: "#888888",
@@ -75,6 +76,7 @@ const config = {
 					6: "#727272",
 					7: "#4B4B4B",
 					8: "#C1C0C0",
+					9: "#AFAFAF",
 				},
 				dark: {
 					1: "#1B1B1B",

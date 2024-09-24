@@ -52,3 +52,11 @@ declare type ClientData = {
 	commissionLots: number;
 	commissionReceived: number;
 };
+
+declare type NotificationData = {
+	id: number;
+	title: string;
+	content: string;
+	date: Date;
+	iconUrl: string;
+};
