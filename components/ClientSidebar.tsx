@@ -69,6 +69,29 @@ const ClientSidebar = () => {
 					/>
 				</Link>
 				<Link
+					href="/client-panel/loyalty-store"
+					className={cn("sidebar-link", {
+						"bg-primary": pathName === "/client-panel/loyalty-store",
+					})}>
+					<div className="relative size-6">
+						<Image
+							src={
+								pathName === "/client-panel/loyalty-store"
+									? "/sidebar/store_active.png"
+									: "/sidebar/store.png"
+							}
+							alt="Store Icon"
+							fill
+						/>
+					</div>
+					<p
+						className={cn("sidebar-label", {
+							"!text-white": pathName === "/client-panel/loyalty-store",
+						})}>
+						Loyalty Store
+					</p>
+				</Link>
+				<Link
 					href="/client-panel/profile"
 					className={cn("sidebar-link", {
 						"bg-primary": pathName === "/client-panel/profile",
@@ -101,7 +124,7 @@ const ClientSidebar = () => {
 							fill
 						/>
 					</div>
-					<p className="sidebar-label">Log Out</p>
+					<p className="sidebar-label">Sign Out</p>
 				</Link>
 			</nav>
 		</div>
