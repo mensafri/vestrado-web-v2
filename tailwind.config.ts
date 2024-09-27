@@ -80,6 +80,7 @@ const config = {
 					9: "#AFAFAF",
 					10: "#D5D8DD",
 					11: "#575757",
+					12: "#C7C7C7",
 				},
 				dark: {
 					1: "#1B1B1B",
@@ -87,6 +88,9 @@ const config = {
 				green: {
 					1: "#07D447",
 					2: "#1DC11D",
+					3: "#DBFBE5",
+					4: "#00A133",
+					5: "#04F774",
 				},
 			},
 			borderRadius: {
