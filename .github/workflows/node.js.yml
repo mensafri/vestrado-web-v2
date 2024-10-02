@@ -24,12 +24,12 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Deploy to DigitalOcean
+      - name: Deploy to server
         env:
           HOST: 149.28.150.89
           USERNAME: root
           TARGET_DIR: /var/www/vestrado-web-v2
-          APP_NAME: vestrado-web-v2 #should match the name of the server block
+          APP_NAME: vestrado-crm-v2 #should match the name of the server block
           PORT: 3000
           #if multiple deploys are needed from different branches
           #TARGET_DIR: ${{ github.ref == 'refs/heads/deploytest' && '/var/www/folder_name' || github.ref == 'refs/heads/deployprod' && '/var/www/another-location' }}
