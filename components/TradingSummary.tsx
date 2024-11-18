@@ -23,7 +23,31 @@ import {
 import { CustomPagination } from "./ui/custom-pagination";
 import Flag from "react-world-flags"; // Importing react-world-flags
 import { trades } from "@/lib/data";
-import { ArrowUpDown } from "lucide-react";
+import { ArrowUp, ArrowDown, ArrowUpDown } from "lucide-react";
+
+// Component for time range filters
+const TimeRangeFilter = ({
+	currentRange,
+	onChange,
+}: {
+	currentRange: string;
+	onChange: (range: string) => void;
+}) => {
+	const ranges = ["2W", "1M", "3M", "6M", "1Y"];
+
+	return (
+		<div className="flex space-x-2 flex-wrap gap-2">
+			{ranges.map((range) => (
+				<Button
+					key={range}
+					variant={currentRange === range ? "default" : "outline"}
+					onClick={() => onChange(range)}>
+					{range}
+				</Button>
+			))}
+		</div>
+	);
+};
 
 export default function TradingSummary() {
 	const [page, setPage] = useState(1);
@@ -115,44 +139,21 @@ export default function TradingSummary() {
 	const totalPages = Math.ceil(sortedTrades.length / itemsPerPage);
 
 	return (
-		<div>
+		<div className="overflow-x-auto">
 			<div className="pb-4 px-6">
 				<div className="flex justify-between items-center">
 					<div className="text-xl font-semibold">Trading Summary</div>
 					{/* Time range filter buttons */}
-					<div className="flex space-x-2">
-						<Button
-							variant={timeRange === "2W" ? "default" : "outline"}
-							onClick={() => setTimeRange("2W")}>
-							2W
-						</Button>
-						<Button
-							variant={timeRange === "1M" ? "default" : "outline"}
-							onClick={() => setTimeRange("1M")}>
-							1M
-						</Button>
-						<Button
-							variant={timeRange === "3M" ? "default" : "outline"}
-							onClick={() => setTimeRange("3M")}>
-							3M
-						</Button>
-						<Button
-							variant={timeRange === "6M" ? "default" : "outline"}
-							onClick={() => setTimeRange("6M")}>
-							6M
-						</Button>
-						<Button
-							variant={timeRange === "1Y" ? "default" : "outline"}
-							onClick={() => setTimeRange("1Y")}>
-							1Y
-						</Button>
-					</div>
+					<TimeRangeFilter
+						currentRange={timeRange}
+						onChange={setTimeRange}
+					/>
 				</div>
 			</div>
 			<Card className="w-full border-0 rounded-3xl py-6">
 				<CardContent>
 					{/* Table */}
-					<Table className="min-w-full">
+					<Table className="min-w-full table-auto">
 						<TableHeader>
 							<TableRow>
 								<TableHead>Trades</TableHead>
@@ -161,7 +162,12 @@ export default function TradingSummary() {
 									onClick={() => handleSort("dateCreated")}>
 									<div className="flex items-center gap-2">
 										Date Created
-										<ArrowUpDown className="h-4 w-4" />
+										{sortConfig.key === "dateCreated" &&
+											(sortConfig.direction === "asc" ? (
+												<ArrowUp className="h-4 w-4" />
+											) : (
+												<ArrowDown className="h-4 w-4" />
+											))}
 									</div>
 								</TableHead>
 								<TableHead
@@ -169,7 +175,12 @@ export default function TradingSummary() {
 									onClick={() => handleSort("closeTime")}>
 									<div className="flex items-center gap-2">
 										Close Time
-										<ArrowUpDown className="h-4 w-4" />
+										{sortConfig.key === "closeTime" &&
+											(sortConfig.direction === "asc" ? (
+												<ArrowUp className="h-4 w-4" />
+											) : (
+												<ArrowDown className="h-4 w-4" />
+											))}
 									</div>
 								</TableHead>
 							</TableRow>
