@@ -6,25 +6,31 @@ const LatestUpdates = ({ type }: { type: "ib" | "client" }) => {
 		{
 			id: 1,
 			title: "Vestrado proudly introducing new account: Cent Account",
-			image: "/news/1.png", // Replace with the actual image path
+			image: "/news/1.png",
 			category: "Company News",
 		},
 		{
 			id: 2,
 			title: "Bill Gates and his amazing journey to global philanthropy",
-			image: "/news/2.png", // Replace with the actual image path
+			image: "/news/2.png",
 			category: "Blog Post",
+		},
+		{
+			id: 3,
+			title: "Vestrado proudly introducing new account: Cent Account",
+			image: "/news/1.png",
+			category: "Company News",
 		},
 	];
 
 	return (
 		<div className="w-full">
-			<div className="flex justify-between items-center mb-6 px-6">
-				<h2 className="text-lg font-bold">Latest Updates from Vestrado</h2>
-				<div className="flex space-x-2 items-center">
+			<div className="flex flex-wrap justify-between items-center mb-6 px-4 md:px-6">
+				<h2 className="text-lg font-bold">Latest Updates</h2>
+				<div className="flex space-x-2 items-center md:mt-0">
 					<Link
-						href={`/${type == "ib" ? "ib-panel" : "client-panel"}/promotions`}
-						className="flex items-center bg-white text-gray-3 rounded-full px-6 py-2 border font-medium text-sm">
+						href={`/${type === "ib" ? "ib-panel" : "client-panel"}/promotions`}
+						className="flex items-center bg-white text-gray-600 rounded-full px-4 md:px-6 py-2 border font-medium text-sm hover:shadow-lg transition-shadow">
 						View All
 						<svg
 							className="w-4 h-4 ml-2"
@@ -39,19 +45,13 @@ const LatestUpdates = ({ type }: { type: "ib" | "client" }) => {
 								d="M9 5l7 7-7 7"></path>
 						</svg>
 					</Link>
-					{/* <button className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow">
-						<ChevronLeft className="w-4 h-4 text-gray-500" />
-					</button>
-					<button className="w-8 h-8 flex items-center justify-center bg-white rounded-full shadow">
-						<ChevronRight className="w-4 h-4 text-gray-500" />
-					</button> */}
 				</div>
 			</div>
-			<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-6">
 				{updates.map((update) => (
 					<div
 						key={update.id}
-						className="rounded-2xl bg-white overflow-hidden">
+						className="rounded-2xl bg-white overflow-hidden shadow-md hover:shadow-lg transition-shadow">
 						<div className="relative w-full h-60">
 							<Image
 								src={update.image}
@@ -64,7 +64,9 @@ const LatestUpdates = ({ type }: { type: "ib" | "client" }) => {
 							<span className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">
 								{update.category}
 							</span>
-							<h3 className="mt-4 text-md font-semibold">{update.title}</h3>
+							<h3 className="mt-4 text-md font-semibold hover:text-blue-500 transition-colors">
+								{update.title}
+							</h3>
 						</div>
 					</div>
 				))}

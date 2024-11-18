@@ -84,20 +84,20 @@ const MarketOverviewWidget = () => {
 
 	return (
 		<div className="w-full">
-			<div className="flex justify-between items-center px-6">
+			<div className="flex flex-wrap justify-between items-center px-4 md:px-6">
 				<h2 className="text-lg font-bold">Instruments Overview</h2>
-				<p className="bg-white text-gray-3 rounded-full px-6 py-2 border font-medium text-sm">
+				<p className="bg-white text-gray-3 rounded-full px-4 md:px-6 py-2 border font-medium text-sm">
 					Monthly
 				</p>
 			</div>
 
-			<div className="w-full bg-white rounded-xl p-5 mt-4">
+			<div className="w-full bg-white rounded-xl p-4 md:p-5 mt-4">
 				{/* Market Overview Widget */}
 				<MarketOverview
 					colorTheme="light"
 					isTransparent
-					width={780}
-					height={550}
+					width="100%"
+					height={400}
 					tabs={tabsValue}
 					showChart={false}
 					dateRange="1M"

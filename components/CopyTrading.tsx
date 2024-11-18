@@ -12,18 +12,18 @@ const CopyTrading = ({ type }: { type: "ib" | "client" }) => {
 			gain: 50.88,
 			copiers: 129,
 			since: "2012",
-			profilePicture: "/images/raheem.png", // Image path
+			profilePicture: "/images/raheem.png",
 			progressBarColor: "bg-[#0FF225]",
-			progressBars: 50, // Total number of bars for the gain progress
+			progressBars: 50,
 		},
 		{
 			name: "Katrina Ashe",
 			gain: 73.22,
 			copiers: 312,
 			since: "2012",
-			profilePicture: "/images/katrina.png", // Image path
+			profilePicture: "/images/katrina.png",
 			progressBarColor: "bg-[#0FF225]",
-			progressBars: 73, // Total number of bars for the gain progress
+			progressBars: 73,
 		},
 	];
 
@@ -31,11 +31,11 @@ const CopyTrading = ({ type }: { type: "ib" | "client" }) => {
 
 	return (
 		<div className="flex flex-col justify-between items-center w-full">
-			<div className="w-full flex justify-between items-center px-6">
-				<h2 className="text-lg font-bold">Vestrado’s Copy Trading</h2>
+			<div className="w-full flex flex-wrap justify-between items-center px-4 md:px-6">
+				<h2 className="text-lg font-bold">Copy Trading</h2>
 				<Link
-					href={`/${type == "ib" ? "ib-panel" : "client-panel"}/copytrading`}
-					className="flex items-center bg-white text-gray-3 rounded-full px-6 py-2 border font-medium text-sm">
+					href={`/${type === "ib" ? "ib-panel" : "client-panel"}/copytrading`}
+					className="flex items-center bg-white text-gray-3 rounded-full px-4 md:px-6 py-2 border font-medium text-sm">
 					View All
 					<svg
 						className="w-4 h-4 ml-2"
@@ -52,11 +52,11 @@ const CopyTrading = ({ type }: { type: "ib" | "client" }) => {
 				</Link>
 			</div>
 
-			<div className="flex space-x-2 mt-4">
+			<div className="flex flex-wrap gap-4 mt-4 justify-center md:justify-start">
 				{traders.map((trader, index) => (
 					<div
 						key={index}
-						className="p-6 rounded-3xl w-[24rem] transition-all duration-1000 bg-white hover:bg-gradient-to-t hover:from-[#171821] hover:to-[#0FE00B]"
+						className="p-6 rounded-3xl w-full md:w-[24rem] transition-all duration-1000 bg-white hover:bg-gradient-to-t hover:from-[#171821] hover:to-[#0FE00B]"
 						onMouseEnter={() => setIsHovered(index)}
 						onMouseLeave={() => setIsHovered(null)}>
 						<div className="flex justify-between items-center">
@@ -98,7 +98,6 @@ const CopyTrading = ({ type }: { type: "ib" | "client" }) => {
 
 						{/* Gain and Progress Bars */}
 						<div className="mt-16 flex items-center justify-between">
-							{/* Progress Bars with steps */}
 							<div>
 								<div className="flex items-center justify-between">
 									<p
@@ -126,14 +125,13 @@ const CopyTrading = ({ type }: { type: "ib" | "client" }) => {
 
 										// Determine the bar color based on its index and hover state
 										if (i < trader.progressBars / 5) {
-											barColor = trader.progressBarColor; // Active progress bars
+											barColor = trader.progressBarColor;
 										} else if (isHovered === index) {
-											barColor = "bg-[#535353]"; // Hover state
+											barColor = "bg-[#535353]";
 										} else {
-											barColor = "bg-[#E9F5ED]"; // Default background color for inactive bars
+											barColor = "bg-[#E9F5ED]";
 										}
 
-										// Return the individual progress bar
 										return (
 											<div
 												key={i}

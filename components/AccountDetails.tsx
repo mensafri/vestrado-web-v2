@@ -58,7 +58,7 @@ const AccountDetails: React.FC = () => {
 
 	return (
 		<div
-			className={`relative flex justify-between items-center p-8 ${getBackgroundColor()} rounded-xl w-full`}>
+			className={`relative flex flex-col md:flex-row justify-between items-center p-6 md:p-8 ${getBackgroundColor()} rounded-xl w-full`}>
 			{/* Background Image */}
 			{selectedAccount !== "Demo Account (27348)" && (
 				<Image
@@ -70,7 +70,7 @@ const AccountDetails: React.FC = () => {
 			)}
 
 			{/* Balance Section */}
-			<div className="relative z-10 flex flex-col space-y-20 justify-between">
+			<div className="relative z-10 flex flex-col items-center md:items-start space-y-4 md:space-y-20">
 				<span
 					className={`text-${
 						selectedAccount === "Demo Account (27348)" ? "gray-500" : "white"
@@ -80,12 +80,13 @@ const AccountDetails: React.FC = () => {
 				<span
 					className={`text-${
 						selectedAccount === "Demo Account (27348)" ? "gray-700" : "white"
-					} text-5xl font-semibold mt-2`}>
+					} text-4xl md:text-5xl font-semibold mt-2`}>
 					$192
 				</span>
 			</div>
 
-			<div className="relative z-10 flex flex-col items-end space-y-20 justify-between">
+			{/* Account Type and Actions Section */}
+			<div className="relative z-10 flex flex-col items-center md:items-end space-y-4 md:space-y-20 mt-6 md:mt-0">
 				{/* Account Type Selector */}
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
@@ -108,7 +109,7 @@ const AccountDetails: React.FC = () => {
 				</DropdownMenu>
 
 				{/* Actions Section */}
-				<div className="flex space-x-4">
+				<div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
 					<Button
 						variant="ghost"
 						className={`flex items-center justify-center gap-2 ${

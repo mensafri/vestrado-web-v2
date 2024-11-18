@@ -107,12 +107,13 @@ const links: LinkSectionProps[] = [
 
 const LinkSection: React.FC<LinkSectionProps> = ({ title, items }) => (
 	<div className="flex flex-col space-y-2">
-		<h2 className="font-semibold text-gray-800">{title}</h2>
+		<h2 className="font-semibold text-gray-800 text-lg md:text-xl">{title}</h2>
 		{items.map((item, index) => (
 			<a
 				key={index}
 				href={item.route}
-				className="text-gray-600 hover:text-gray-800 transition-colors duration-200">
+				aria-label={`Navigate to ${item.name}`}
+				className="text-gray-600 hover:text-gray-800 transition-colors duration-200 text-sm md:text-base">
 				{item.name}
 			</a>
 		))}
@@ -121,8 +122,8 @@ const LinkSection: React.FC<LinkSectionProps> = ({ title, items }) => (
 
 const WidgetLink: React.FC = () => {
 	return (
-		<div className="w-full bg-sky-4 py-8 px-12 rounded-lg">
-			<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+		<div className="w-full bg-sky-4 py-4 px-6 md:py-8 md:px-12 rounded-lg max-h-[80vh] overflow-y-auto">
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
 				{links.map((link, index) => (
 					<LinkSection
 						key={index}

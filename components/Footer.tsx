@@ -4,14 +4,14 @@ import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 const Footer: React.FC = () => {
 	return (
-		<footer className="py-8 mx-8 border-t-2 border-gray-300 mt-8">
+		<footer className="py-8 px-4 md:px-8 border-t-2 border-gray-300 mt-8">
 			<div className="container mx-auto">
-				<div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 mb-8">
 					<div>
 						<h4 className="text-lg font-semibold text-[#595959] mb-4">
 							Services
 						</h4>
-						<ul className="font-montserrat text-[#838181]">
+						<ul className="text-sm text-[#838181] space-y-2">
 							<li>
 								<Link href="/contacts">Contacts</Link>
 							</li>
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
 						<h4 className="text-lg font-semibold text-[#595959] mb-4">
 							Offers
 						</h4>
-						<ul className="font-montserrat text-[#838181]">
+						<ul className="text-sm text-[#838181] space-y-2">
 							<li>
 								<Link href="/offers/20-deposit-bonus">20% Deposit Bonus</Link>
 							</li>
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
 						<h4 className="text-lg font-semibold text-[#595959] mb-4">
 							Legal Information
 						</h4>
-						<ul className="font-montserrat text-[#838181]">
+						<ul className="text-sm text-[#838181] space-y-2">
 							<li>
 								<Link href="/legal/risk-disclosure">Risk Disclosure</Link>
 							</li>
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
 					</div>
 					<div>
 						<h4 className="text-lg font-semibold text-[#595959] mb-4">About</h4>
-						<ul className="font-montserrat text-[#838181]">
+						<ul className="text-sm text-[#838181] space-y-2">
 							<li>
 								<Link href="/about">About Vestrado</Link>
 							</li>
@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
 					</div>
 				</div>
 				<div className="text-sm text-[#838181]">
-					<p className="mb-4">
+					<p className="mb-4 leading-relaxed">
 						Risk Warning: Trading Forex and CFDs involves significant risk and
 						can result in the loss of your invested capital. You should not
 						invest more than you can afford to lose and should ensure that you
@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
 						legal documents and ensure that you fully understand the risks
 						before you make any trading decisions.
 					</p>
-					<p>
+					<p className="leading-relaxed">
 						Restrictions: Vestrado Ltd are unable to service clients under
 						certain jurisdictions from the following countries: Japan,
 						Afghanistan, Australia, Albania, Belarus, Canada, Central African
