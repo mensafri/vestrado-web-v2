@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variabel untuk konfigurasi
-REPO_URL="git@github.com:mensafri/vestrado-web-v2.git" # Ganti dengan repository Anda
+REPO_URL="git@github.com:mensafri/vestrado-web-v2.git"
 APP_DIR=~/myapp
 NEW_APP_DIR=~/myapp_new
 OLD_APP_DIR=~/myapp_old
@@ -12,7 +12,7 @@ if [ -d "$APP_DIR" ]; then
   rm -rf $NEW_APP_DIR
   cp -r $APP_DIR $NEW_APP_DIR
   cd $NEW_APP_DIR
-  git pull origin master
+  git pull origin main
 else
   echo "Cloning repository from $REPO_URL..."
   git clone $REPO_URL $NEW_APP_DIR

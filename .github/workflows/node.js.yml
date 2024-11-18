@@ -1,18 +1,20 @@
-name: Deploy to VPS
+name: CI/CD Deployment
 
 on:
   push:
     branches:
-      - main
+      - master # Jalankan pipeline pada push ke branch "main"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # 1. Checkout Code
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      # 2. Setup SSH Key
       - name: Setup SSH Key
         run: |
           mkdir -p ~/.ssh
@@ -20,6 +22,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 149.28.150.89 >> ~/.ssh/known_hosts
 
-      - name: Run Deployment Script
+      # 3. Deploy to VPS
+      - name: Deploy to VPS
         run: |
           ssh root@149.28.150.89 'bash -s' < ./update.sh
