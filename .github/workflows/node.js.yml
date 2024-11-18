@@ -1,53 +1,25 @@
+name: Deploy to VPS
+
 on:
   push:
     branches:
-      - master # Change to your specific branch
-      # - deployprod  # Additional branch for deployment
+      - master # Trigger deployment ketika ada push ke branch master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - name: Check Node.js version
-        run: node -v
-
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Deploy to server
-        env:
-          HOST: 149.28.150.89
-          USERNAME: root
-          TARGET_DIR: /var/www/vestrado-web-v2
-          APP_NAME: vestrado-crm-v2 #should match the name of the server block
-          PORT: 3000
-          #if multiple deploys are needed from different branches
-          #TARGET_DIR: ${{ github.ref == 'refs/heads/deploytest' && '/var/www/folder_name' || github.ref == 'refs/heads/deployprod' && '/var/www/another-location' }}
-          #APP_NAME: ${{ github.ref == 'refs/heads/deploytest' && 'folder_name' || github.ref == 'refs/heads/deployprod' && 'folder_name_2' }}
-          #PORT: ${{ github.ref == 'refs/heads/deploytest' && '3000' || github.ref == 'refs/heads/deployprod' && '3001' }}
+      - name: Setup SSH Key
         run: |
-          ssh -o StrictHostKeyChecking=no $USERNAME@$HOST << EOF
-            export PATH=/usr/local/bin:$PATH #'which pm2' command on terminal will give the right path
-            cd $TARGET_DIR
-            git pull origin ${GITHUB_REF#refs/heads/}
-            npm install
-            npm run build
-            if pm2 list | grep -q $APP_NAME; then
-              echo "Restarting application: $APP_NAME"
-              pm2 restart $APP_NAME
-            else
-              echo "Starting application: $APP_NAME"
-              pm2 start npm --name $APP_NAME -- start -- --port=$PORT
-            fi            
-            pm2 save
-          EOF
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H <vps_ip> >> ~/.ssh/known_hosts
+
+      - name: Deploy to Server
+        run: |
+          ssh root@149.28.150.89 'bash -s' < ./update.sh
