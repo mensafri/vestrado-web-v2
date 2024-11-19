@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
-const promotions: Promotion[] = [
+const promotions = [
 	{
 		id: 1,
 		imageSrc: "/promotions/1.png", // Replace with your image path
@@ -41,11 +41,18 @@ export default function ActivePromotionsCarousel() {
 		);
 	};
 
-	// Tampilkan dua promosi sekaligus
-	const visiblePromotions = promotions.slice(currentIndex, currentIndex + 2);
+	// Tentukan jumlah promosi yang terlihat berdasarkan ukuran layar
+	const itemsToShow = 2; // Default: Tampilkan dua promosi
+
+	// Tampilkan promosi yang sesuai dengan index saat ini
+	const visiblePromotions = promotions.slice(
+		currentIndex,
+		currentIndex + itemsToShow,
+	);
 
 	return (
 		<div className="relative w-full max-w-[900px] mx-auto">
+			{/* Header Carousel */}
 			<div className="flex w-full justify-between items-center px-6 mb-4">
 				<h2 className="text-xl font-bold">Active Promotions</h2>
 				<div className="flex items-center space-x-2">
@@ -55,9 +62,9 @@ export default function ActivePromotionsCarousel() {
 						className="bg-white rounded-full">
 						<ChevronLeft className="w-5 h-5 text-gray-500" />
 					</Button>
-					<span>
-						Showing {Math.ceil((currentIndex + 1) / 2)} out of{" "}
-						{Math.ceil(promotions.length / 2)}
+					<span className="hidden md:flex">
+						{Math.ceil((currentIndex + 1) / itemsToShow)} of{" "}
+						{Math.ceil(promotions.length / itemsToShow)}
 					</span>
 					<Button
 						variant="ghost"
@@ -68,33 +75,43 @@ export default function ActivePromotionsCarousel() {
 				</div>
 			</div>
 
-			<div className="relative flex justify-between space-x-4">
+			{/* Promosi */}
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 				{visiblePromotions.map((promotion) => (
 					<div
 						key={promotion.id}
-						className="relative w-1/2 bg-white h-[28rem] rounded-3xl flex flex-col">
-						{/* Bagian gambar - Menempati setengah bagian atas */}
-						<div className="relative w-full h-64 rounded-xl overflow-hidden">
+						className="relative bg-white h-[28rem] rounded-3xl flex flex-col shadow-lg hover:shadow-xl transition-shadow">
+						{/* Bagian gambar */}
+						<div className="relative w-full h-64 rounded-t-3xl overflow-hidden">
 							<Image
 								src={promotion.imageSrc}
 								alt={promotion.title}
-								className="object-cover w-full h-full rounded-t-xl" // Gambar memenuhi bagian atas dengan rasio yang tepat
+								className="object-cover w-full h-full"
 								width={400}
 								height={200}
 							/>
 						</div>
-						{/* Bagian keterangan - Menempati setengah bagian bawah */}
-						<div className="text-center flex-grow py-12 pl-6 flex flex-col justify-between">
-							{/* Label - Tampilan sesuai gambar */}
+						{/* Bagian deskripsi */}
+						<div className="flex flex-col flex-grow py-6 px-4">
 							<span className="inline-block bg-gray-100 text-gray-500 font-semibold text-sm rounded-full w-32 px-4 py-1 mb-4">
 								{promotion.label}
 							</span>
-							{/* Title - Lebih besar dan menonjol */}
-							<h3 className="text-lg text-start font-bold text-black">
+							<h3 className="text-lg font-bold text-black">
 								{promotion.title}
 							</h3>
 						</div>
 					</div>
+				))}
+			</div>
+
+			{/* Indikator posisi */}
+			<div className="flex justify-center mt-4 space-x-2">
+				{promotions.map((_, index) => (
+					<div
+						key={index}
+						className={`w-3 h-3 rounded-full ${
+							index === currentIndex ? "bg-blue-500" : "bg-gray-300"
+						}`}></div>
 				))}
 			</div>
 		</div>

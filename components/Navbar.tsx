@@ -1,5 +1,5 @@
 "use client";
-import { clientSidebarLinks, ibSidebarLinks } from "@/lib/constants";
+import { ibNavbarLinks, clientNavbarLinks } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -23,13 +23,13 @@ const Navbar = ({ type }: { type: "client" | "ib" }) => {
 	const getLabelByRoute = (route: string) => {
 		const link =
 			type === "client"
-				? clientSidebarLinks.find((link) => link.route === route)
-				: ibSidebarLinks.find((link) => link.route === route);
+				? clientNavbarLinks.find((link) => link.route === route)
+				: ibNavbarLinks.find((link) => link.route === route);
 		return link ? link.label : "Loyalty Store";
 	};
 
 	// Sidebar Links
-	const sidebarLinks = type === "client" ? clientSidebarLinks : ibSidebarLinks;
+	const sidebarLinks = type === "client" ? clientNavbarLinks : ibNavbarLinks;
 
 	return (
 		<>
@@ -46,7 +46,7 @@ const Navbar = ({ type }: { type: "client" | "ib" }) => {
 							<Menu className="w-6 h-6" />
 						)}
 					</button>
-					<p className="font-montserrat font-bold text-xl">
+					<p className="font-montserrat font-bold text-lg">
 						{getLabelByRoute(pathName)}
 					</p>
 				</div>

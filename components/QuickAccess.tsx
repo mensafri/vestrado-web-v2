@@ -9,7 +9,7 @@ const QuickAccess = () => {
 				{/* Live Account Button */}
 				<Button
 					variant="outline"
-					className="flex flex-col items-center justify-center p-3 bg-gray-100 rounded-md h-36 w-full border-0">
+					className="flex text-wrap flex-col items-center justify-center p-3 bg-gray-100 rounded-md h-36 w-full border-0">
 					<div className="w-12 h-12 text-white rounded-full bg-[#3BC83B] mb-2 flex justify-center items-center">
 						<Check />
 					</div>
@@ -21,7 +21,7 @@ const QuickAccess = () => {
 				{/* Demo Account Button */}
 				<Button
 					variant="outline"
-					className="flex flex-col items-center justify-center p-3 bg-gray-100 rounded-md h-36 w-full border-0">
+					className="flex text-wrap flex-col items-center justify-center p-3 bg-gray-100 rounded-md h-36 w-full border-0">
 					<div className="w-12 h-12 text-gray-400 rounded-full bg-gray-200 mb-2 flex justify-center items-center">
 						<Play />
 					</div>
@@ -33,7 +33,7 @@ const QuickAccess = () => {
 				{/* Upload Documents Button */}
 				<Button
 					variant="outline"
-					className="flex flex-col items-center justify-center p-3 bg-gray-100 rounded-md h-36 w-full border-0">
+					className="flex text-wrap flex-col items-center justify-center p-3 bg-gray-100 rounded-md h-36 w-full border-0">
 					<div className="w-12 h-12 text-gray-400 rounded-full bg-gray-200 mb-2 flex justify-center items-center">
 						<ArrowUp />
 					</div>

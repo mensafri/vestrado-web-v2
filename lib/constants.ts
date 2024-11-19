@@ -23,12 +23,12 @@ export const clientSidebarLinks = [
 		route: "/client-panel/history",
 		label: "History",
 	},
-	{
-		imgURL: "/sidebar/copytrading.png",
-		imgActive: "/sidebar/copytrading_active.png",
-		route: "/client-panel/copytrading",
-		label: "Copytrading",
-	},
+	// {
+	// 	imgURL: "/sidebar/copytrading.png",
+	// 	imgActive: "/sidebar/copytrading_active.png",
+	// 	route: "/client-panel/copytrading",
+	// 	label: "Copytrading",
+	// },
 	{
 		imgURL: "/sidebar/promotion.png",
 		imgActive: "/sidebar/promotion_active.png",
@@ -40,6 +40,41 @@ export const clientSidebarLinks = [
 		imgActive: "/sidebar/notifications_active.png",
 		route: "/client-panel/notifications",
 		label: "Notifications",
+	},
+];
+
+export const clientNavbarLinks = [
+	{
+		route: "/client-panel/dashboard",
+		label: "Dashboard",
+	},
+	{
+		route: "/client-panel/accounts",
+		label: "Accounts",
+	},
+	{
+		route: "/client-panel/funds",
+		label: "Funds",
+	},
+	{
+		route: "/client-panel/history",
+		label: "History",
+	},
+	// {
+	// 	route: "/client-panel/copytrading",
+	// 	label: "Copytrading",
+	// },
+	{
+		route: "/client-panel/promotions",
+		label: "Promotions",
+	},
+	{
+		route: "/client-panel/notifications",
+		label: "Notifications",
+	},
+	{
+		route: "/client-panel/loyalty-store",
+		label: "Store",
 	},
 ];
 
@@ -101,6 +136,48 @@ export const ibSidebarLinks = [
 	{
 		imgURL: "/sidebar/profile.png",
 		imgActive: "/sidebar/profile_active.png",
+		route: "/ib-panel/profile",
+		label: "Profile",
+	},
+];
+export const ibNavbarLinks = [
+	{
+		route: "/ib-panel/dashboard",
+		label: "Dashboard",
+	},
+	{
+		route: "/ib-panel/reports",
+		label: "Reports",
+	},
+	{
+		route: "/ib-panel/marketing-tools",
+		label: "Marketing Tools",
+	},
+	{
+		route: "/ib-panel/optional-sharing",
+		label: "Optional Sharing",
+	},
+	{
+		route: "/ib-panel/accounts",
+		label: "Accounts",
+	},
+	{
+		route: "/ib-panel/funds",
+		label: "Funds",
+	},
+	{
+		route: "/ib-panel/history",
+		label: "History",
+	},
+	{
+		route: "/ib-panel/notifications",
+		label: "Notifications",
+	},
+	{
+		route: "/ib-panel/promotions",
+		label: "Promotions",
+	},
+	{
 		route: "/ib-panel/profile",
 		label: "Profile",
 	},
