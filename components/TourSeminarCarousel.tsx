@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -28,6 +28,23 @@ const promotions = [
 
 export default function TourSeminarCarousel() {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const [itemsToShow, setItemsToShow] = useState(1);
+
+	// Mengupdate jumlah item berdasarkan lebar layar
+	useEffect(() => {
+		const updateItemsToShow = () => {
+			setItemsToShow(window.innerWidth >= 768 ? 2 : 1);
+		};
+
+		// Jalankan fungsi saat komponen di-mount
+		updateItemsToShow();
+
+		// Dengarkan perubahan ukuran layar
+		window.addEventListener("resize", updateItemsToShow);
+
+		// Hapus event listener saat komponen di-unmount
+		return () => window.removeEventListener("resize", updateItemsToShow);
+	}, []);
 
 	const handlePrevious = () => {
 		setCurrentIndex((prevIndex) =>
@@ -40,9 +57,6 @@ export default function TourSeminarCarousel() {
 			prevIndex === promotions.length - 1 ? 0 : prevIndex + 1,
 		);
 	};
-
-	// Responsif: Menampilkan jumlah item berdasarkan ukuran layar
-	const itemsToShow = window.innerWidth >= 768 ? 2 : 1;
 
 	// Tampilkan promosi sesuai dengan index dan jumlah item yang ingin ditampilkan
 	const visiblePromotions = promotions.slice(

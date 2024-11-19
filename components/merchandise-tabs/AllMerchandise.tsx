@@ -61,25 +61,28 @@ const AllMerchandise = () => {
 	];
 
 	return (
-		<div className="grid grid-cols-2 gap-4">
+		<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
 			{merchandiseItems.map((item) => (
 				<div
 					key={item.id}
-					className="flex flex-col">
-					<div className="relative flex justify-center items-center bg-gray-10 w-80 h-80 rounded-2xl">
-						{/* Apply hover effect and transition */}
+					className="flex flex-col items-center bg-white shadow-md p-4 rounded-xl hover:shadow-lg transition-shadow duration-300">
+					{/* Gambar Merchandise */}
+					<div className="relative flex justify-center items-center bg-gray-100 w-full h-64 rounded-xl">
 						<Image
 							src={item.image}
 							alt={item.name}
-							width={100}
-							height={100}
-							className="object-contain w-60 h-60 rounded-lg transform transition-transform duration-300 hover:scale-125"
+							width={150}
+							height={150}
+							className="object-contain w-44 h-44 rounded-lg transform transition-transform duration-300 hover:scale-110"
 						/>
 					</div>
-					<h3 className="mt-4 text-lg text-gray-11">{item.name}</h3>
+					{/* Nama Merchandise */}
+					<h3 className="mt-4 text-center text-lg font-semibold text-gray-800">
+						{item.name}
+					</h3>
+					{/* Rating */}
 					<div className="flex items-center mt-2">
-						{/* Rating */}
-						<div className="flex text-green-500 text-xl font-bold">
+						<div className="flex text-yellow-500 text-base">
 							{Array(item.rating)
 								.fill(0)
 								.map((_, i) => (
@@ -87,7 +90,10 @@ const AllMerchandise = () => {
 								))}
 						</div>
 					</div>
-					<p className="text-gray-11 mt-2 font-semibold">{item.price}</p>
+					{/* Harga */}
+					<p className="text-center text-gray-600 mt-2 font-medium">
+						{item.price}
+					</p>
 				</div>
 			))}
 		</div>

@@ -35,23 +35,25 @@ const HistoryStore = () => {
 	];
 
 	return (
-		<div className="space-y-4">
+		<div className="space-y-6">
 			{purchaseHistory.map((item) => (
 				<div
 					key={item.id}
-					className="bg-white p-10 rounded-xl flex items-center space-x-6">
-					<div className="flex-shrink-0">
+					className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+					<div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40">
 						<Image
 							src={item.image}
 							alt={item.name}
-							width={150}
-							height={150}
+							width={160}
+							height={160}
 							className="object-cover rounded-lg"
 						/>
 					</div>
 					<div className="flex-1">
-						<h3 className="text-xl font-semibold mb-2">{item.name}</h3>
-						<div className="grid grid-cols-2 gap-4 text-sm text-gray-600">
+						<h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">
+							{item.name}
+						</h3>
+						<div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-600">
 							<p>
 								<span className="font-semibold">Size:</span> {item.size}
 							</p>
@@ -66,15 +68,17 @@ const HistoryStore = () => {
 								<span className="font-semibold">Paid With:</span>{" "}
 								{item.paidWith}
 							</p>
-							<p className="col-span-2">
+							<div className="col-span-1 sm:col-span-2">
 								<span className="font-semibold">Status:</span>{" "}
 								<span
-									className={`font-bold ${
-										item.status == "Success" ? "text-green-500" : "text-red-500"
+									className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${
+										item.status === "Success"
+											? "bg-green-100 text-green-600"
+											: "bg-red-100 text-red-600"
 									}`}>
 									{item.status}
 								</span>
-							</p>
+							</div>
 						</div>
 					</div>
 				</div>
