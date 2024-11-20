@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const ProfilePopup: React.FC = () => {
 	return (
-		<div className="max-h-[80vh] overflow-y-auto bg-white p-4 md:p-6 rounded-lg shadow-md space-y-6">
+		<div className="max-h-[80vh] overflow-y-auto  bg-white p-4 md:p-6 lg:p-8 rounded-lg shadow-md space-y-6 lg:max-w-4xl lg:mx-auto">
 			<div>
 				<div className="flex justify-between items-center mb-4">
 					<div>
@@ -39,7 +39,7 @@ const ProfilePopup: React.FC = () => {
 				</div>
 			</div>
 
-			<div className="bg-gray-50 p-4 rounded-lg shadow-md space-y-2">
+			<div className="bg-gray-50 p-4 md:p-6 lg:p-8 rounded-lg shadow-md space-y-2">
 				<MenuItem
 					label="Account Verification"
 					route="/account-verification"
@@ -62,7 +62,7 @@ const ProfilePopup: React.FC = () => {
 				/>
 			</div>
 
-			<div className="bg-gray-50 p-4 rounded-lg shadow-md space-y-2">
+			<div className="bg-gray-50 p-4 md:p-6 lg:p-8 rounded-lg shadow-md space-y-2">
 				<MenuItem
 					label="Notification"
 					route="/notification"

@@ -119,7 +119,7 @@ const Navbar = ({ type }: { type: "client" | "ib" }) => {
 							<ChevronDown className="text-black" />
 						</Button>
 					</PopoverTrigger>
-					<PopoverContent>
+					<PopoverContent className="w-full">
 						<ProfilePopup />
 					</PopoverContent>
 				</Popover>
