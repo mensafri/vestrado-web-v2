@@ -49,7 +49,7 @@ const MerchandiseCart = () => {
 	const deliveryFee = 0; // Static for now
 
 	return (
-		<div className="space-y-8">
+		<div className="space-y-8 px-4">
 			{/* Cart Summary */}
 			<div className="bg-white p-6 rounded-2xl shadow-md">
 				<h3 className="font-semibold text-lg mb-4">Cart Summary</h3>
@@ -73,7 +73,7 @@ const MerchandiseCart = () => {
 						{subtotalPoints}PTS/{subtotalLots}LOTS
 					</p>
 				</div>
-				<div className="flex space-x-2 mt-4">
+				<div className="flex flex-col sm:flex-row sm:space-x-2 mt-4 space-y-2 sm:space-y-0">
 					<Button
 						className="w-full bg-black text-white rounded-lg py-2"
 						variant="default">
@@ -92,7 +92,7 @@ const MerchandiseCart = () => {
 				{cartItems.map((item) => (
 					<div
 						key={item.id}
-						className="bg-white p-6 rounded-2xl shadow-md flex flex-wrap md:flex-nowrap space-x-6 items-center">
+						className="bg-white p-6 rounded-2xl shadow-md flex flex-wrap gap-4 items-center">
 						{/* Image */}
 						<div className="w-24 h-24 rounded-lg overflow-hidden">
 							<Image
@@ -147,7 +147,7 @@ const MerchandiseCart = () => {
 						</div>
 
 						{/* Action Buttons */}
-						<div className="flex flex-col space-y-2">
+						<div className="flex flex-col w-full sm:w-auto space-y-2">
 							<Button
 								variant="outline"
 								className="w-full">

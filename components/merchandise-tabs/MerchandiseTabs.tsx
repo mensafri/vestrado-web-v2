@@ -10,23 +10,25 @@ export default function MerchandiseTabs() {
 				defaultValue="all"
 				className="space-y-4">
 				{/* Tabs Navigation */}
-				<TabsList className="flex justify-between border-b border-gray-300">
-					<TabsTrigger
-						value="all"
-						className="py-2 px-4 font-semibold text-gray-700 border-b-2 border-transparent focus:border-sky-500 focus:text-sky-500">
-						All Merchandising
-					</TabsTrigger>
-					<TabsTrigger
-						value="history"
-						className="py-2 px-4 font-semibold text-gray-700 border-b-2 border-transparent focus:border-sky-500 focus:text-sky-500">
-						Purchase History
-					</TabsTrigger>
-					<TabsTrigger
-						value="cart"
-						className="py-2 px-4 font-semibold text-gray-700 border-b-2 border-transparent focus:border-sky-500 focus:text-sky-500">
-						Shopping Cart
-					</TabsTrigger>
-				</TabsList>
+				<div className="overflow-x-auto">
+					<TabsList className="flex justify-start md:justify-between border-b border-gray-300 whitespace-nowrap">
+						<TabsTrigger
+							value="all"
+							className="py-2 px-4 font-semibold text-gray-700 border-b-2 border-transparent whitespace-nowrap">
+							All Merchandising
+						</TabsTrigger>
+						<TabsTrigger
+							value="history"
+							className="py-2 px-4 font-semibold text-gray-700 border-b-2 border-transparent whitespace-nowrap">
+							Purchase History
+						</TabsTrigger>
+						<TabsTrigger
+							value="cart"
+							className="py-2 px-4 font-semibold text-gray-700 border-b-2 border-transparent whitespace-nowrap">
+							Shopping Cart
+						</TabsTrigger>
+					</TabsList>
+				</div>
 
 				{/* All Merchandising */}
 				<TabsContent
