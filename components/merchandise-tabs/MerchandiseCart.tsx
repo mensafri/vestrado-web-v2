@@ -1,43 +1,12 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "../ui/button";
 import Image from "next/image";
+import { Button } from "../ui/button";
+import { useCart } from "@/contexts/CartContext";
 
 const MerchandiseCart = () => {
-	const [cartItems, setCartItems] = useState([
-		{
-			id: 1,
-			name: "Cypher Baseball Cap",
-			price: 330,
-			points: 200,
-			size: "S",
-			quantity: 1,
-			image: "/store/cap.png",
-		},
-	]);
+	const { cartItems, removeFromCart, updateCartItem } = useCart();
 
-	// Handle item removal
-	const handleRemoveItem = (id: number) => {
-		if (confirm("Are you sure you want to delete this item?")) {
-			setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
-		}
-	};
-
-	// Handle size or quantity change
-	const handleUpdateItem = (
-		id: number,
-		key: string,
-		value: string | number,
-	) => {
-		setCartItems((prevItems) =>
-			prevItems.map((item) =>
-				item.id === id ? { ...item, [key]: value } : item,
-			),
-		);
-	};
-
-	// Calculate totals dynamically
 	const subtotalPoints = cartItems.reduce(
 		(total, item) => total + item.price * item.quantity,
 		0,
@@ -118,7 +87,7 @@ const MerchandiseCart = () => {
 										className="w-full border border-gray-300 rounded-lg p-2 mt-1"
 										value={item.size}
 										onChange={(e) =>
-											handleUpdateItem(item.id, "size", e.target.value)
+											updateCartItem(item.id, "size", e.target.value)
 										}>
 										<option value="S">S</option>
 										<option value="M">M</option>
@@ -132,7 +101,7 @@ const MerchandiseCart = () => {
 										className="w-full border border-gray-300 rounded-lg p-2 mt-1"
 										value={item.quantity}
 										onChange={(e) =>
-											handleUpdateItem(
+											updateCartItem(
 												item.id,
 												"quantity",
 												Number(e.target.value),
@@ -156,7 +125,7 @@ const MerchandiseCart = () => {
 							<Button
 								variant="destructive"
 								className="w-full"
-								onClick={() => handleRemoveItem(item.id)}>
+								onClick={() => removeFromCart(item.id)}>
 								Delete
 							</Button>
 						</div>

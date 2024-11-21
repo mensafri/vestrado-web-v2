@@ -4,6 +4,81 @@ const now = new Date();
 const formatDate = (daysAgo: number) =>
 	format(new Date(now.setDate(now.getDate() - daysAgo)), "dd MMMM yyyy");
 
+export const merchandiseItems: Merchandise[] = [
+	{
+		id: 1,
+		sku: "123456789",
+		name: "Vestrado Campus Hoodie",
+		image: "/store/jacket.png",
+		rating: 5,
+		price: 50,
+		points: 370,
+	},
+	{
+		id: 2,
+		sku: "123456789",
+		name: "Vestrado Cypher Sweat Shirt",
+		image: "/store/sweater.png",
+		rating: 5,
+		price: 50,
+		points: 370,
+	},
+	{
+		id: 3,
+		sku: "123456789",
+		name: "Vestrado Campus Tees",
+		image: "/store/shirt.png",
+		rating: 5,
+		price: 50,
+		points: 370,
+	},
+	{
+		id: 4,
+		sku: "123456789",
+		name: "Vestrado's Bucket Hat",
+		image: "/store/hat.png",
+		rating: 5,
+		price: 50,
+		points: 370,
+	},
+	{
+		id: 5,
+		sku: "123456789",
+		name: "Vestrado Campus Tees",
+		image: "/store/bottle.png",
+		rating: 5,
+		price: 50,
+		points: 370,
+	},
+	{
+		id: 6,
+		sku: "123456789",
+		name: "Vestrado Campus Tees",
+		image: "/store/shirt-2.png",
+		rating: 5,
+		price: 50,
+		points: 370,
+	},
+	{
+		id: 7,
+		sku: "90842904",
+		name: "Vestrado's Paragons Totebag",
+		image: "/store/bag.png",
+		rating: 5,
+		price: 50,
+		points: 370,
+	},
+	{
+		id: 8,
+		sku: "1231232",
+		name: "Vestrado's Trading Plan",
+		image: "/store/book.png",
+		rating: 5,
+		price: 50,
+		points: 370,
+	},
+];
+
 export const trades: Trade[] = [
 	{
 		id: 1,

@@ -60,3 +60,13 @@ declare type NotificationData = {
 	date: Date;
 	iconUrl: string;
 };
+
+declare type Merchandise = {
+	id: number;
+	sku: string;
+	name: string;
+	image: string;
+	rating: number;
+	price: number;
+	points: number;
+};
