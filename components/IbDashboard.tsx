@@ -34,7 +34,7 @@ const generateData = (startDate: Date) => {
 };
 
 const formatDate = (date: Date) => {
-	return format(date, "MMM yyyy"); // Format diubah untuk menggunakan nama bulan yang dipotong
+	return format(date, "MMM yyyy");
 };
 
 const CustomTooltip = ({ active, payload, label }: any) => {
@@ -61,15 +61,15 @@ const ChartComponent: React.FC<ChartProps> = ({ title, color }) => {
 	const data = generateData(date || new Date());
 
 	return (
-		<Card className="w-full max-w-xl mx-auto border-0 shadow-none">
-			<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+		<Card className="w-full border-0 shadow-none">
+			<CardHeader className="flex flex-col md:flex-row md:items-center md:justify-between pb-2 space-y-2 md:space-y-0">
 				<CardTitle className="text-lg font-semibold">{title}</CardTitle>
 				<Popover>
 					<PopoverTrigger asChild>
 						<Button
 							variant="outline"
 							className={cn(
-								"w-[140px] justify-start text-left font-normal",
+								"w-full md:w-[140px] justify-start text-left font-normal",
 								!date && "text-muted-foreground",
 							)}>
 							<CalendarIcon className="mr-2 h-4 w-4" />
@@ -89,7 +89,7 @@ const ChartComponent: React.FC<ChartProps> = ({ title, color }) => {
 				</Popover>
 			</CardHeader>
 			<CardContent>
-				<div className="h-[300px] mt-4">
+				<div className="h-[200px] sm:h-[250px] lg:h-[300px] mt-4">
 					<ResponsiveContainer
 						width="100%"
 						height="100%">
@@ -158,7 +158,7 @@ const ChartComponent: React.FC<ChartProps> = ({ title, color }) => {
 
 export default function IbDashboard() {
 	return (
-		<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+		<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
 			<ChartComponent
 				title="Commission Earned"
 				color="#10B981"

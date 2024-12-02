@@ -50,8 +50,8 @@ export default function ClientRegistrationPerformance() {
 
 	return (
 		<Card className="w-full border-0 shadow-none">
-			<CardHeader className="flex flex-row items-center justify-between pb-2">
-				<CardTitle className="text-base font-medium">
+			<CardHeader className="flex flex-wrap md:flex-nowrap md:items-center justify-between pb-4">
+				<CardTitle className="text-base font-medium mb-2 md:mb-0">
 					Client Registration Performance
 				</CardTitle>
 				<Popover>
@@ -59,16 +59,16 @@ export default function ClientRegistrationPerformance() {
 						<Button
 							variant={"outline"}
 							className={cn(
-								"justify-start text-left font-normal",
+								"justify-start text-left font-normal w-full md:w-auto",
 								!dateRange && "text-muted-foreground",
 							)}>
 							<CalendarIcon className="mr-2 h-4 w-4" />
 							{dateRange?.from ? (
 								dateRange.to ? (
-									<>
-										{format(dateRange.from, "d MMM yyyy")} -{" "}
-										{format(dateRange.to, "d MMM yyyy")}
-									</>
+									<>{`${format(dateRange.from, "d MMM yyyy")} - ${format(
+										dateRange.to,
+										"d MMM yyyy",
+									)}`}</>
 								) : (
 									format(dateRange.from, "d MMM yyyy")
 								)
@@ -86,43 +86,45 @@ export default function ClientRegistrationPerformance() {
 							defaultMonth={dateRange?.from}
 							selected={dateRange}
 							onSelect={setDateRange}
-							numberOfMonths={2}
+							numberOfMonths={1}
 						/>
 					</PopoverContent>
 				</Popover>
 			</CardHeader>
 			<CardContent>
-				<ResponsiveContainer
-					width="100%"
-					height={350}>
-					<BarChart
-						data={chartData}
-						margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-						<CartesianGrid
-							strokeDasharray="3 3"
-							vertical={false}
-						/>
-						<XAxis
-							dataKey="date"
-							axisLine={false}
-							tickLine={false}
-							tick={{ fontSize: 12 }}
-							interval="preserveStartEnd"
-						/>
-						<YAxis
-							axisLine={false}
-							tickLine={false}
-							tick={{ fontSize: 12 }}
-							domain={[0, "dataMax + 5"]}
-						/>
-						<Tooltip />
-						<Bar
-							dataKey="registrations"
-							fill="#4ade80"
-							radius={[4, 4, 0, 0]}
-						/>
-					</BarChart>
-				</ResponsiveContainer>
+				<div className="h-[200px] sm:h-[300px]">
+					<ResponsiveContainer
+						width="100%"
+						height="100%">
+						<BarChart
+							data={chartData}
+							margin={{ top: 5, right: 30, left: 10, bottom: 5 }}>
+							<CartesianGrid
+								strokeDasharray="3 3"
+								vertical={false}
+							/>
+							<XAxis
+								dataKey="date"
+								axisLine={false}
+								tickLine={false}
+								tick={{ fontSize: 12 }}
+								interval="preserveStartEnd"
+							/>
+							<YAxis
+								axisLine={false}
+								tickLine={false}
+								tick={{ fontSize: 12 }}
+								domain={[0, "dataMax + 5"]}
+							/>
+							<Tooltip />
+							<Bar
+								dataKey="registrations"
+								fill="#4ade80"
+								radius={[4, 4, 0, 0]}
+							/>
+						</BarChart>
+					</ResponsiveContainer>
+				</div>
 			</CardContent>
 		</Card>
 	);

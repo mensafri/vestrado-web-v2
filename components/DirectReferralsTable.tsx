@@ -9,7 +9,7 @@ import {
 	PopoverContent,
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
-import { format, isWithinInterval } from "date-fns"; // Add isWithinInterval from date-fns for date filtering
+import { format, isWithinInterval } from "date-fns";
 import {
 	Table,
 	TableBody,
@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/table";
 import { DateRange } from "react-day-picker";
 import { CustomPagination } from "@/components/ui/custom-pagination";
-import { referralsData } from "@/lib/data"; // Ensure your data includes a date field
+import { referralsData } from "@/lib/data";
 
 const currencyOptions = ["USD", "EUR", "GBP"]; // Currency options for dropdown
 
@@ -48,7 +48,7 @@ export default function DirectReferralsTable() {
 				end: selectedDateRange.to,
 			});
 		}
-		return true; // If no date range is selected, show all referrals
+		return true; // Show all referrals if no date range is selected
 	});
 
 	const totalPages = Math.ceil(filteredReferrals.length / itemsPerPage);
@@ -85,9 +85,9 @@ export default function DirectReferralsTable() {
 
 	return (
 		<div className="w-full">
-			<div className="flex justify-between items-center mb-4 px-6">
+			<div className="flex flex-wrap justify-between items-center mb-4 px-4 gap-4">
 				<h2 className="text-lg font-bold">Direct Referrals</h2>
-				<div className="flex items-center space-x-4">
+				<div className="flex flex-wrap gap-4 items-center">
 					{/* Date Range Picker */}
 					<Popover>
 						<PopoverTrigger asChild>
@@ -131,7 +131,7 @@ export default function DirectReferralsTable() {
 			</div>
 
 			{/* Table */}
-			<div className="rounded-3xl bg-white p-6 border-0 w-full">
+			<div className="rounded-3xl bg-white p-4 md:p-6 border-0 w-full overflow-x-auto">
 				<Table>
 					<TableHeader>
 						<TableRow>
@@ -165,22 +165,6 @@ export default function DirectReferralsTable() {
 						</TableRow>
 					</TableHeader>
 					<TableBody>
-						{/* Total Row */}
-						<TableRow className="bg-green-50 font-bold">
-							<TableCell>Total</TableCell>
-							<TableCell>
-								{currentReferrals
-									.reduce((sum, r) => sum + r.balance, 0)
-									.toFixed(2)}
-							</TableCell>
-							<TableCell>
-								{currentReferrals
-									.reduce((sum, r) => sum + r.commission, 0)
-									.toFixed(2)}
-							</TableCell>
-							<TableCell></TableCell>
-						</TableRow>
-
 						{/* Referral Rows */}
 						{currentReferrals.map((referral, index) => (
 							<TableRow key={index}>
