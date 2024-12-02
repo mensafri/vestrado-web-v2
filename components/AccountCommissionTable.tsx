@@ -9,7 +9,7 @@ import {
 	PopoverContent,
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
-import { format, isWithinInterval, parseISO } from "date-fns";
+import { format, isWithinInterval } from "date-fns";
 import {
 	Table,
 	TableBody,
@@ -22,7 +22,7 @@ import { DateRange } from "react-day-picker";
 import { CustomPagination } from "@/components/ui/custom-pagination";
 import { accountData } from "@/lib/data"; // Import data
 
-const currencyOptions = ["USD", "EUR", "GBP"]; // Currency options for dropdown
+const currencyOptions = ["USD", "EUR", "GBP"];
 const today = new Date();
 const twoWeeksAgo = new Date();
 twoWeeksAgo.setDate(today.getDate() - 30);
@@ -32,8 +32,8 @@ export default function AccountCommissionTable() {
 	const [selectedDateRange, setSelectedDateRange] = useState<
 		DateRange | undefined
 	>({
-		from: twoWeeksAgo, // Tanggal 2 minggu yang lalu
-		to: today, // Tanggal hari ini
+		from: twoWeeksAgo,
+		to: today,
 	});
 	const [currentPage, setCurrentPage] = useState(1);
 	const [sortColumn, setSortColumn] = useState<keyof AccountData | null>(null);
@@ -58,7 +58,7 @@ export default function AccountCommissionTable() {
 	// Filtering by date range
 	const filteredData = accountData.filter((referral) => {
 		if (selectedDateRange?.from && selectedDateRange?.to) {
-			const registrationDate = new Date(referral.registrationDate); // Convert date from string
+			const registrationDate = new Date(referral.registrationDate);
 			return isWithinInterval(registrationDate, {
 				start: selectedDateRange.from,
 				end: selectedDateRange.to,
@@ -86,28 +86,6 @@ export default function AccountCommissionTable() {
 			return sortDirection === "asc" ? aValue - bValue : bValue - aValue;
 		}
 
-		// Sorting for boolean columns
-		if (typeof aValue === "boolean" && typeof bValue === "boolean") {
-			return sortDirection === "asc"
-				? aValue === bValue
-					? 0
-					: aValue
-					? -1
-					: 1
-				: aValue === bValue
-				? 0
-				: aValue
-				? 1
-				: -1;
-		}
-
-		// Sorting for date column
-		if (sortColumn === "registrationDate") {
-			const dateA = new Date(a.registrationDate).getTime();
-			const dateB = new Date(b.registrationDate).getTime();
-			return sortDirection === "asc" ? dateA - dateB : dateB - dateA;
-		}
-
 		return 0;
 	});
 
@@ -116,9 +94,11 @@ export default function AccountCommissionTable() {
 
 	return (
 		<>
-			<div className="flex flex-row justify-between items-center px-6 mb-4">
-				<h2 className="text-lg font-bold">Account Commission</h2>
-				<div className="flex items-center space-x-4">
+			<div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-6 mb-4 space-y-4 md:space-y-0">
+				<h2 className="text-lg font-bold text-center md:text-left">
+					Account Commission
+				</h2>
+				<div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
 					{/* Date Range Picker */}
 					<Popover>
 						<PopoverTrigger asChild>
@@ -144,11 +124,11 @@ export default function AccountCommissionTable() {
 					</Popover>
 
 					{/* Currency Dropdown */}
-					<div>
+					<div className="w-full md:w-auto">
 						<select
 							value={selectedCurrency}
 							onChange={(e) => setSelectedCurrency(e.target.value)}
-							className="bg-white border items-center justify-center text-gray-700 rounded-md px-4 py-2">
+							className="bg-white border w-full md:w-auto text-gray-700 rounded-md px-4 py-2">
 							{currencyOptions.map((currency) => (
 								<option
 									key={currency}
@@ -162,7 +142,7 @@ export default function AccountCommissionTable() {
 			</div>
 
 			{/* "Calculate Total" Button */}
-			<div className="bg-green-50 p-4 mb-4 rounded-lg flex justify-between items-center">
+			<div className="bg-green-50 p-4 mb-4 rounded-lg flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
 				<Button
 					className="bg-black flex flex-row gap-2 text-white px-6 py-1 text-sm rounded-lg"
 					size="sm">
@@ -188,13 +168,13 @@ export default function AccountCommissionTable() {
 								"commissionReceived",
 							].map((column) => (
 								<TableHead
-									className="w-full text-nowrap font-semibold"
+									className="w-full text-nowrap font-semibold text-sm md:text-base"
 									key={column}>
 									<Button
 										variant="ghost"
-										className="flex items-center"
+										className="flex items-center justify-between"
 										onClick={() => handleSort(column as keyof AccountData)}>
-										{column.toLocaleUpperCase()}{" "}
+										<span>{column.toLocaleUpperCase()}</span>
 										<ArrowUpDown className="ml-2 h-4 w-4" />
 									</Button>
 								</TableHead>

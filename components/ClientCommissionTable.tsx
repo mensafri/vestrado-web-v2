@@ -20,9 +20,9 @@ import {
 } from "@/components/ui/table";
 import { DateRange } from "react-day-picker";
 import { CustomPagination } from "@/components/ui/custom-pagination";
-import { clientData } from "@/lib/data"; // Pastikan clientData terdefinisi dengan benar
+import { clientData } from "@/lib/data"; // Ensure clientData is defined correctly
 
-const currencyOptions = ["USD", "EUR", "GBP"]; // Currency options for dropdown
+const currencyOptions = ["USD", "EUR", "GBP"];
 const today = new Date();
 const twoWeeksAgo = new Date();
 twoWeeksAgo.setDate(today.getDate() - 14);
@@ -90,15 +90,17 @@ export default function ClientCommissionTable() {
 
 	return (
 		<>
-			<div className="flex flex-row justify-between items-center px-6 mb-4">
-				<h2 className="text-lg font-bold">Client Commission</h2>
-				<div className="flex items-center space-x-4">
+			<div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-6 mb-4 space-y-4 md:space-y-0">
+				<h2 className="text-lg font-bold text-center md:text-left">
+					Client Commission
+				</h2>
+				<div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
 					{/* Date Range Picker */}
 					<Popover>
 						<PopoverTrigger asChild>
 							<Button
 								variant="outline"
-								className="flex items-center">
+								className="flex items-center justify-center sm:w-auto w-full">
 								<CalendarIcon className="mr-2 h-4 w-4" />
 								{selectedDateRange?.from && selectedDateRange?.to
 									? `${format(
@@ -118,11 +120,11 @@ export default function ClientCommissionTable() {
 					</Popover>
 
 					{/* Currency Dropdown */}
-					<div>
+					<div className="w-full sm:w-auto">
 						<select
 							value={selectedCurrency}
 							onChange={(e) => setSelectedCurrency(e.target.value)}
-							className="bg-white border items-center justify-center text-gray-700 rounded-md px-4 py-2">
+							className="bg-white border w-full sm:w-auto text-gray-700 rounded-md px-4 py-2">
 							{currencyOptions.map((currency) => (
 								<option
 									key={currency}
@@ -136,7 +138,7 @@ export default function ClientCommissionTable() {
 			</div>
 
 			{/* "Calculate Total" Button */}
-			<div className="bg-green-50 p-4 mb-4 rounded-lg flex justify-between items-center">
+			<div className="bg-green-50 p-4 mb-4 rounded-lg flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
 				<Button
 					className="bg-black flex flex-row gap-2 text-white px-6 py-1 text-sm rounded-lg"
 					size="sm">
@@ -160,13 +162,13 @@ export default function ClientCommissionTable() {
 								"commissionReceived",
 							].map((column) => (
 								<TableHead
-									className="w-full text-nowrap font-semibold"
+									className="w-full text-nowrap font-semibold text-sm md:text-base"
 									key={column}>
 									<Button
 										variant="ghost"
-										className="flex items-center"
+										className="flex items-center justify-between"
 										onClick={() => handleSort(column as keyof ClientData)}>
-										{column.toLocaleUpperCase()}{" "}
+										<span>{column.toLocaleUpperCase()}</span>
 										<ArrowUpDown className="ml-2 h-4 w-4" />
 									</Button>
 								</TableHead>

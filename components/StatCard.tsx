@@ -46,26 +46,25 @@ export default function StatCard({
 	const iconSrc = value < 0 ? "/icons/down.png" : "/icons/up.png";
 
 	return (
-		<Card className="w-full border-0 rounded-3xl p-2">
-			<CardHeader>
-				<CardTitle className="text-lg font-semibold text-gray-700">
+		<Card className="w-full border-0 rounded-3xl p-4 sm:p-6">
+			<CardHeader className="space-y-2 sm:space-y-4">
+				<CardTitle className="text-lg sm:text-xl font-semibold text-gray-700">
 					{title}
 				</CardTitle>
-				<span className="text-4xl font-semibold text-gray-700">
+				<span className="text-3xl sm:text-4xl font-semibold text-gray-700">
 					{unit === "$"
 						? `${unit}${Math.abs(value).toLocaleString()}` // Show absolute value for negative amounts
-						: `${Math.abs(value).toLocaleString()} ${unit}`}{" "}
-					{/* Use absolute value */}
+						: `${Math.abs(value).toLocaleString()} ${unit}`}
 				</span>
 			</CardHeader>
-			<CardContent className="p-6 flex flex-col sm:flex-row justify-between items-center">
-				<div className="text-center sm:text-left">
+			<CardContent className="flex flex-col md:flex-row justify-between items-center gap-6">
+				<div className="text-center md:text-left w-full md:w-auto">
 					<Popover>
 						<PopoverTrigger asChild>
 							<Button
 								variant="outline"
 								className={cn(
-									"w-full sm:w-auto justify-start text-left font-normal",
+									"w-full md:w-auto justify-start text-left font-normal",
 									!selectedDate && "text-muted-foreground",
 								)}>
 								<CalendarIcon className="mr-2 h-4 w-4" />
@@ -86,7 +85,7 @@ export default function StatCard({
 						</PopoverContent>
 					</Popover>
 				</div>
-				<div className="relative w-[8rem] h-[8rem] flex items-center justify-center">
+				<div className="relative w-[6rem] h-[6rem] sm:w-[8rem] sm:h-[8rem] flex items-center justify-center">
 					<PieChart
 						width={130}
 						height={130}>
@@ -108,7 +107,7 @@ export default function StatCard({
 							innerRadius="70%"
 							outerRadius="100%"
 							startAngle={90} // Start from the right
-							endAngle={540} // Rotate clockwise to the left
+							endAngle={450} // Rotate clockwise
 							strokeWidth={0}
 						/>
 					</PieChart>
@@ -123,10 +122,9 @@ export default function StatCard({
 								/>
 							</div>
 							<span
-								className="text-2xl font-bold"
+								className="text-lg sm:text-2xl font-bold"
 								style={{ color: chartColors.completed }}>
-								{Math.round(completedPercentage)}%{" "}
-								{/* Show absolute percentage */}
+								{Math.round(completedPercentage)}%
 							</span>
 						</div>
 					</div>
