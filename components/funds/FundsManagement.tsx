@@ -3,7 +3,7 @@ import DepositFunds from "./DepositFunds";
 import WithdrawFunds from "./WithdrawFunds";
 import TransferFunds from "./TransferFunds";
 
-export default function FundsManagement() {
+export default function FundsManagement({ type }: { type: "ib" | "client" }) {
 	return (
 		<div className="w-full mx-auto mt-4">
 			<Tabs defaultValue="deposit">
@@ -29,15 +29,15 @@ export default function FundsManagement() {
 				{/* Tabs Content */}
 				<div className="p-4 bg-white shadow-md rounded-lg">
 					<TabsContent value="deposit">
-						<DepositFunds />
+						<DepositFunds type={type} />
 					</TabsContent>
 
 					<TabsContent value="withdraw">
-						<WithdrawFunds />
+						<WithdrawFunds type={type} />
 					</TabsContent>
 
 					<TabsContent value="transfer">
-						<TransferFunds />
+						<TransferFunds type={type} />
 					</TabsContent>
 				</div>
 			</Tabs>

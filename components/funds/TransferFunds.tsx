@@ -42,7 +42,7 @@ const step2Schema = z.object({
 type Step1FormData = z.infer<typeof step1Schema>;
 type Step2FormData = z.infer<typeof step2Schema>;
 
-export default function TransferFunds() {
+export default function TransferFunds({ type }: { type: "ib" | "client" }) {
 	const [step, setStep] = useState(1);
 
 	// Form handlers for step 1 and step 2
@@ -350,7 +350,12 @@ export default function TransferFunds() {
 						<Button
 							className="mt-4"
 							size="lg">
-							<Link href="/client-panel/accounts">Back to Account</Link>
+							<Link
+								href={`/${
+									type === "client" ? "client-panel" : "ib-panel"
+								}/accounts`}>
+								Back to Account
+							</Link>
 						</Button>
 					</CardContent>
 				</Card>
