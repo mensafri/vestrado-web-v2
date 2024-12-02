@@ -67,7 +67,7 @@ export default function IBLinksTable() {
 			<Tabs
 				value={activeTab}
 				onValueChange={(val) => setActiveTab(val)}>
-				<div className="flex justify-between items-center mb-6">
+				<div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
 					<TabsList className="bg-gray-100">
 						<TabsTrigger value="links">IB Links</TabsTrigger>
 						<TabsTrigger value="banners">Banners</TabsTrigger>
