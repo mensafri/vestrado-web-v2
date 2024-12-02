@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const PaymentDetails = () => {
+const PaymentDetails = ({ type }: { type: "ib" | "client" }) => {
 	const paymentData = [
 		{ method: "Online Banking", bank: "Ambank", status: "Approved" },
 		{ method: "Online Banking", bank: "Maybank", status: "Approved" },
@@ -27,7 +27,12 @@ const PaymentDetails = () => {
 					variant="outline"
 					className="bg-white text-black border border-gray-300 rounded-full px-4 py-2"
 					asChild>
-					<Link href="/client-panel/accounts/add-payment">Add New Details</Link>
+					<Link
+						href={`/${
+							type === "client" ? "client-panel" : "ib-panel"
+						}/accounts/add-payment`}>
+						Add New Details
+					</Link>
 				</Button>
 			</div>
 			<div className="max-h-64 overflow-y-auto custom-scrollbar">

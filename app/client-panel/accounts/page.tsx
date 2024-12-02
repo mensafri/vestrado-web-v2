@@ -20,7 +20,7 @@ const ClientAccountPage = () => {
 				<TradingSummary />
 			</div>
 			<div className="w-full md:w-1/3 flex flex-col gap-4 items-center">
-				<PaymentDetails />
+				<PaymentDetails type="client" />
 				<QuickAccess />
 				<AccountManager />
 			</div>
