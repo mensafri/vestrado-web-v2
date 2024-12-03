@@ -10,7 +10,7 @@ const AddPaymentPage = () => {
 				<PaymentDetailForm />
 			</div>
 			<div className="w-1/3 flex flex-col gap-4 items-center">
-				<PaymentDetails />
+				<PaymentDetails type="ib" />
 				<QuickAccess />
 				<AccountManager />
 			</div>
