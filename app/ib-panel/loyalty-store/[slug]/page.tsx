@@ -1,14 +1,16 @@
 import AccountManager from "@/components/AccountManager";
 import AccountDetailsMini from "@/components/AccountsDetailsMini";
 import LoyaltySummary from "@/components/LoyaltySummary";
-import MerchandiseTabs from "@/components/merchandise-tabs/MerchandiseTabs";
+import MerchandiseCarousel from "@/components/MerchandiseCarousel";
+import ProductDetail from "@/components/ProductDetail";
 import QuickAccess from "@/components/QuickAccess";
 
-const IbLoyaltyStorePage = () => {
+const ProductDetailPage = ({ params }: { params: { slug: string } }) => {
 	return (
 		<div className="flex flex-col md:flex-row w-full md:justify-between p-4 md:space-x-4 space-y-4 md:space-y-0">
 			<div className="w-full md:w-2/3 flex flex-col gap-4">
-				<MerchandiseTabs />
+				<ProductDetail id={Number(params.slug)} />
+				<MerchandiseCarousel />
 			</div>
 			<div className="w-full md:w-1/3 flex flex-col gap-4 items-center">
 				<LoyaltySummary />
@@ -20,4 +22,4 @@ const IbLoyaltyStorePage = () => {
 	);
 };
 
-export default IbLoyaltyStorePage;
+export default ProductDetailPage;
